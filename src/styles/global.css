@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+:root {
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-body: "Cormorant Garamond", "Georgia", serif;
+  --font-mono: "Cormorant Garamond", "Georgia", serif;
+  --color-paper: #eeebe0;
+  --color-paper-deep: #d8d8cd;
+  --color-ink: #101417;
+  --color-copy: #30383b;
+  --color-muted: #647174;
+  --color-rust: #d2793f;
+  --color-rule: rgba(16, 20, 23, 0.1);
+  --color-rule-strong: rgba(16, 20, 23, 0.18);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 34%),
+    radial-gradient(circle at top right, rgba(104, 216, 255, 0.1), transparent 26%),
+    repeating-linear-gradient(
+      180deg,
+      rgba(16, 20, 23, 0.032) 0,
+      rgba(16, 20, 23, 0.032) 1px,
+      transparent 1px,
+      transparent 42px
+    ),
+    linear-gradient(180deg, var(--color-paper), var(--color-paper-deep));
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--color-rust);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(184, 243, 90, 0.22);
+}
+
+#root {
+  position: relative;
+}
+
+#root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.13;
+  background-image:
+    radial-gradient(rgba(16, 20, 23, 0.22) 0.6px, transparent 0.6px),
+    radial-gradient(rgba(16, 20, 23, 0.14) 0.45px, transparent 0.45px);
+  background-position:
+    0 0,
+    12px 12px;
+  background-size: 24px 24px;
+  mix-blend-mode: multiply;
+}
+
+:focus-visible {
+  outline: 2px solid #b8f35a;
+  outline-offset: 3px;
+}

@@ -1,0 +1,27 @@
+<svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="200" fill="#12161C"/>
+  <rect x="18" y="18" width="284" height="164" fill="#171E26" stroke="#3A4652" stroke-width="1.5"/>
+  <rect x="34" y="66" width="44" height="58" fill="#F4EFE6"/>
+  <rect x="104" y="48" width="54" height="94" fill="#9A3F24"/>
+  <rect x="184" y="44" width="54" height="102" fill="#D4A55A"/>
+  <rect x="260" y="66" width="28" height="58" fill="#4B8B72"/>
+  <path d="M78 95H104" stroke="#F4EFE6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M158 95H184" stroke="#F4EFE6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M238 95H260" stroke="#F4EFE6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M44 84H68M44 104H62" stroke="#12161C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M118 70H144M118 94H144M118 118H134" stroke="#F4EFE6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M196 68L226 68M196 92L218 92M196 116L226 116" stroke="#12161C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M268 96L275 104L286 84" stroke="#F4EFE6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M118 154C138 166 166 166 186 154" stroke="#4B8B72" stroke-width="3" stroke-linecap="round"/>
+  <path d="M186 154H170M186 154L178 140" stroke="#4B8B72" stroke-width="3" stroke-linecap="round"/>
+  <rect x="40" y="154" width="54" height="10" fill="#3A4652"/>
+  <rect x="40" y="154" width="18" height="10" fill="#F4EFE6"/>
+  <rect x="104" y="154" width="54" height="10" fill="#3A4652"/>
+  <rect x="104" y="154" width="36" height="10" fill="#9A3F24"/>
+  <rect x="184" y="154" width="54" height="10" fill="#3A4652"/>
+  <rect x="184" y="154" width="44" height="10" fill="#D4A55A"/>
+  <text x="34" y="38" fill="#F4EFE6" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1">REGEX</text>
+  <text x="104" y="38" fill="#F4EFE6" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1">CALIBRATED GATE</text>
+  <text x="184" y="38" fill="#F4EFE6" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1">CONFORMAL</text>
+  <text x="60" y="176" fill="#B9C0C7" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1">UNCERTAIN SLICE ROUTES TO SPECIALIST</text>
+</svg>

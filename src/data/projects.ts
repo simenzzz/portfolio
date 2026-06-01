@@ -13,6 +13,17 @@ export const products: ProductEntry[] = [
     liveLabel: "Live Demo"
   },
   {
+    slug: "tideway",
+    title: "Tideway",
+    summary:
+      "A Rust edge-to-cloud telemetry pipeline for scientific sensor networks: ingest high-rate streams offline, durably buffer and deduplicate records, reconcile zones after partitions, and fan signed aggregate queries across gateways with explicit partial-result semantics.",
+    tags: ["Rust", "Distributed Systems", "Edge Computing", "Telemetry"],
+    visualKey: "tideway",
+    repoUrl: "https://github.com/simenzzz/tideway",
+    liveUrl: "https://github.com/simenzzz/tideway#demo-runbook",
+    liveLabel: "Demo Runbook"
+  },
+  {
     slug: "lucubrum",
     title: "Lucubrum",
     summary:

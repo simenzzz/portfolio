@@ -14,6 +14,7 @@ describe("portfolio app", () => {
     expect(screen.getByRole("heading", { name: /applied work/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /research papers/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /deckgraph/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /tideway/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /lucubrum/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /realtime collaboration platform/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /v2g anomaly detection/i })).toBeInTheDocument();
@@ -27,6 +28,7 @@ describe("portfolio app", () => {
       "https://nexus.wizconsults.com"
     );
     expect(screen.getAllByText(/import a curated github repo/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/edge-to-cloud telemetry pipeline/i).length).toBeGreaterThan(0);
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
@@ -45,6 +47,27 @@ describe("portfolio app", () => {
     expect(within(dialog).getByRole("link", { name: /live demo/i })).toHaveAttribute(
       "href",
       "https://deckgraph-demo.onrender.com"
+    );
+  });
+
+  it("opens Tideway details with repository and demo runbook links", async () => {
+    const user = userEvent.setup();
+
+    renderRoute(["/"]);
+
+    await user.click(screen.getByRole("button", { name: /tideway/i }));
+
+    const dialog = screen.getByRole("dialog", { name: /tideway details/i });
+
+    expect(within(dialog).getByRole("heading", { name: /tideway/i })).toBeInTheDocument();
+    expect(within(dialog).getByText(/reconcile zones after partitions/i)).toBeInTheDocument();
+    expect(within(dialog).getByRole("link", { name: /repository/i })).toHaveAttribute(
+      "href",
+      "https://github.com/simenzzz/tideway"
+    );
+    expect(within(dialog).getByRole("link", { name: /demo runbook/i })).toHaveAttribute(
+      "href",
+      "https://github.com/simenzzz/tideway#demo-runbook"
     );
   });
 

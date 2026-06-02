@@ -355,7 +355,7 @@
   display: flex;
   gap: 0.4rem;
   color: color-mix(in srgb, var(--card-accent) 56%, var(--muted));
-  font-size: 0.48rem;
+  font-size: 0.73rem;
   font-style: italic;
 }
 

@@ -16,7 +16,7 @@ export const products: ProductEntry[] = [
     slug: "tideway",
     title: "Tideway",
     summary:
-      "A production-grade Rust pipeline for scientific sensor networks that ingests at 14–17M samples/s, durably buffers offline during partitions, and reconciles zones on reconnection using IBLT set diffing (~93 bytes per differing record). Ships Ed25519-signed bundle transport, CRDT control-plane state, federated drift detection, and partial-result query semantics—with zero `unsafe` code and 88% line coverage across ~710 tests.",
+      "A research-grade Rust pipeline for scientific sensor networks that ingests at 14–17M samples/s, durably buffers offline during partitions, and reconciles zones on reconnection using IBLT set diffing (~93 bytes per differing record). Ships Ed25519-signed bundle transport, CRDT control-plane state, federated drift detection, and partial-result query semantics—with zero `unsafe` code and 88% line coverage across ~710 tests.",
     tags: ["Rust", "Distributed Systems", "Edge Computing", "Telemetry"],
     visualKey: "tideway",
     repoUrl: "https://github.com/simenzzz/tideway",
@@ -57,7 +57,7 @@ export const researchEntries: ResearchEntry[] = [
     roleLabel: "2-person team",
     primaryUrl: "/papers/v2g-anomaly-detection.pdf",
     thesis:
-      "EVSE attack detection is only credible under a disjoint session-level split: it separates a model that detects attacks from one that memorizes capture structure.",
+      "A multi-modal transformer that fuses network flows and host events to detect five categories of cyberattacks on EV charging stations—Recon, DoS, Backdoor, Cryptojacking, and Benign—with SHAP explainability under a strict session-level holdout on CICEVSE2024.",
     question:
       "Can a multi-modal transformer detect five EVSE attack classes across host and network evidence while generalizing to capture sessions it has never seen?",
     method:

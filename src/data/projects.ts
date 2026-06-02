@@ -5,8 +5,8 @@ export const products: ProductEntry[] = [
     slug: "deckgraph",
     title: "Deckgraph",
     summary:
-      "A hosted dependency explorer for polyglot codebases: import a curated GitHub repo, scan npm, PyPI, Go, Cargo, and Maven modules, and inspect dependency health, module structure, and cross-language edges through a live React dashboard.",
-    tags: ["TypeScript", "Developer Tools", "Architecture", "Visualization"],
+      "An installable CLI (`npx deckgraph`) and VS Code extension that builds a unified dependency graph across npm, PyPI, Go, Cargo, and Maven—detecting cross-language edges (gRPC/proto, FFI, OpenAPI), flagging outdated packages and license violations, and presenting layered, filterable views through a live React dashboard. Zero native dependencies: all parsing via WebAssembly tree-sitter grammars.",
+    tags: ["TypeScript", "Developer Tools", "Static Analysis", "VS Code Extension"],
     visualKey: "deckgraph",
     repoUrl: "https://github.com/simenzzz/Deckgraph",
     liveUrl: "https://deckgraph-demo.onrender.com",
@@ -16,7 +16,7 @@ export const products: ProductEntry[] = [
     slug: "tideway",
     title: "Tideway",
     summary:
-      "A Rust edge-to-cloud telemetry pipeline for scientific sensor networks: ingest high-rate streams offline, durably buffer and deduplicate records, reconcile zones after partitions, and fan signed aggregate queries across gateways with explicit partial-result semantics.",
+      "A production-grade Rust pipeline for scientific sensor networks that ingests at 14–17M samples/s, durably buffers offline during partitions, and reconciles zones on reconnection using IBLT set diffing (~93 bytes per differing record). Ships Ed25519-signed bundle transport, CRDT control-plane state, federated drift detection, and partial-result query semantics—with zero `unsafe` code and 88% line coverage across ~710 tests.",
     tags: ["Rust", "Distributed Systems", "Edge Computing", "Telemetry"],
     visualKey: "tideway",
     repoUrl: "https://github.com/simenzzz/tideway",
@@ -27,18 +27,18 @@ export const products: ProductEntry[] = [
     slug: "lucubrum",
     title: "Lucubrum",
     summary:
-      "A two-service learning platform that generates structured study roadmaps, attaches curated resources, creates adaptive exercises, and tracks mastery across a React, Node, and FastAPI stack.",
-    tags: ["React", "Node.js", "FastAPI", "LLM Systems"],
+      "A fully-deployed two-service platform (Node.js/TypeScript orchestrator + FastAPI/Python curriculum service) that generates DAG-structured learning roadmaps, ranks and attaches YouTube resources deterministically, creates LLM-graded adaptive exercises, and tracks mastery with weighted scoring. All LLM outputs are schema-validated via Pydantic with retry logic and full audit logging; provider (Gemini/Claude) is swappable via config.",
+    tags: ["TypeScript", "Python", "Microservices", "LLM Systems"],
     visualKey: "lucubrum",
     repoUrl: "https://github.com/simenzzz/learningProj",
     liveUrl: "https://lucubrum.vercel.app/"
   },
   {
     slug: "realtime-collaboration-platform",
-    title: "Realtime Collaboration Platform",
+    title: "Cove",
     summary:
-      "A channel-based collaboration platform with live chat, presence, synchronized watch rooms, and a CRDT whiteboard for shared drawing and editing.",
-    tags: ["Svelte", "WebSockets", "Yjs", "Realtime"],
+      "A Rust/Axum + SvelteKit collaboration platform backed by SurrealDB's graph data model for social connections (follows, friends-of-friends discovery, server recommendations). Real-time messaging runs via a room-actor WebSocket architecture with sequence numbers and resume capability; collaborative editing uses Yrs (Rust Yjs port) for conflict-free document and whiteboard sync, with synchronized watch-together rooms.",
+    tags: ["Rust", "SvelteKit", "CRDTs", "WebSockets"],
     visualKey: "realtime-collaboration-platform",
     liveUrl: "https://nexus.wizconsults.com",
     liveLabel: "Live Demo"
@@ -50,7 +50,7 @@ export const researchEntries: ResearchEntry[] = [
     slug: "v2g-anomaly-detection",
     title: "V2G Anomaly Detection",
     summary:
-      "An explainable transformer that fuses raw host and network event tokens for five-class EVSE attack detection on CICEVSE2024, evaluated under a strict session-level holdout that exposes the leakage easier splits hide, with SHAP and attention evidence for analyst review.",
+      "A multi-modal transformer (4 layers, d=128, 8 heads) that fuses host and network event tokens for five-class EVSE attack detection (Recon, DoS, Backdoor, Cryptojacking) on CICEVSE2024—achieving 90.30% accuracy and 0.695 macro-F1 under a strict session-level holdout that exposes the leakage random splits conceal. SHAP over 18,944 attribution dimensions and attention exports provide analyst-facing evidence for each prediction.",
     tags: ["Research", "Transformers", "Cybersecurity", "Explainable AI"],
     visualKey: "v2g-anomaly-detection",
     year: "2026",
@@ -99,14 +99,14 @@ export const researchEntries: ResearchEntry[] = [
     slug: "uncertainty-routed-3-tier-waf",
     title: "Uncertainty-Routed 3-Tier WAF",
     summary:
-      "A research-driven web application firewall that routes HTTP requests through deterministic rules, a calibrated neural gate, and a conformal specialist for the uncertain slice.",
-    tags: ["Research", "Security", "ML", "Systems"],
+      "A three-tier cascading WAF: ReDoS-safe regex screening → temperature-calibrated char-BiLSTM router → Mondrian conformal specialist trained on the uncertain slice. The cascade reaches 0.972 F1 on CSIC2010, escalating only 3.04% of requests to Tier 3, with a saliency-driven feedback loop that synthesizes new regex rules from neural attribution scores.",
+    tags: ["Research", "Security", "Conformal Prediction", "NLP"],
     visualKey: "uncertainty-routed-3-tier-waf",
     year: "2026",
     roleLabel: "Solo research system",
     primaryUrl: "/papers/uncertainty-routed-3-tier-waf.pdf",
     thesis:
-      "A WAF should not force one detector to solve every request; it should spend expensive inspection only where calibrated uncertainty justifies it.",
+      "A three-tier cascading WAF: ReDoS-safe regex screening → temperature-calibrated char-BiLSTM router → Mondrian conformal specialist trained on the uncertain slice. The cascade reaches 0.972 F1 on CSIC2010, escalating only 3.04% of requests to Tier 3, with a saliency-driven feedback loop that synthesizes new regex rules from neural attribution scores.",
     question:
       "Can a three-tier cascade improve attack recall on ambiguous HTTP traffic while keeping the hot path fast and policy-driven?",
     method:

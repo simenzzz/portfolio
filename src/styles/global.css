@@ -4,14 +4,16 @@
   --font-display: "Cormorant Garamond", "Georgia", serif;
   --font-body: "Cormorant Garamond", "Georgia", serif;
   --font-mono: "Cormorant Garamond", "Georgia", serif;
-  --color-paper: #eeebe0;
-  --color-paper-deep: #d8d8cd;
-  --color-ink: #101417;
-  --color-copy: #30383b;
-  --color-muted: #647174;
-  --color-rust: #d2793f;
-  --color-rule: rgba(16, 20, 23, 0.1);
-  --color-rule-strong: rgba(16, 20, 23, 0.18);
+  --color-paper: #efe6d2;
+  --color-paper-deep: #dcc8a8;
+  --color-ink: #2c241b;
+  --color-copy: #4f4435;
+  --color-muted: #766956;
+  --color-rust: #9f512f;
+  --color-forest: #4d6545;
+  --color-burgundy: #7b3940;
+  --color-rule: rgba(88, 67, 42, 0.12);
+  --color-rule-strong: rgba(88, 67, 42, 0.24);
   font-family: var(--font-body);
   line-height: 1.5;
   font-weight: 400;
@@ -35,12 +37,13 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 34%),
-    radial-gradient(circle at top right, rgba(104, 216, 255, 0.1), transparent 26%),
+    linear-gradient(180deg, rgba(255, 252, 242, 0.5), transparent 34%),
+    radial-gradient(circle at 82% 4%, rgba(77, 101, 69, 0.08), transparent 26rem),
+    radial-gradient(circle at 12% 8%, rgba(159, 81, 47, 0.08), transparent 24rem),
     repeating-linear-gradient(
       180deg,
-      rgba(16, 20, 23, 0.032) 0,
-      rgba(16, 20, 23, 0.032) 1px,
+      rgba(88, 67, 42, 0.032) 0,
+      rgba(88, 67, 42, 0.032) 1px,
       transparent 1px,
       transparent 42px
     ),
@@ -69,7 +72,8 @@ img {
 }
 
 ::selection {
-  background: rgba(184, 243, 90, 0.22);
+  background: rgba(159, 81, 47, 0.22);
+  color: var(--color-ink);
 }
 
 #root {
@@ -81,10 +85,10 @@ img {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.13;
+  opacity: 0.08;
   background-image:
-    radial-gradient(rgba(16, 20, 23, 0.22) 0.6px, transparent 0.6px),
-    radial-gradient(rgba(16, 20, 23, 0.14) 0.45px, transparent 0.45px);
+    radial-gradient(rgba(88, 67, 42, 0.18) 0.55px, transparent 0.55px),
+    radial-gradient(rgba(88, 67, 42, 0.12) 0.4px, transparent 0.4px);
   background-position:
     0 0,
     12px 12px;
@@ -93,6 +97,6 @@ img {
 }
 
 :focus-visible {
-  outline: 2px solid #b8f35a;
+  outline: 2px solid var(--color-rust);
   outline-offset: 3px;
 }

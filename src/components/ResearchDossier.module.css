@@ -73,7 +73,6 @@
 
 .metaRow li {
   padding: 0.34rem 0.54rem;
-  border: 1px solid rgba(18, 18, 18, 0.12);
   background: rgba(255, 255, 255, 0.48);
   color: var(--color-copy);
   font-family: var(--font-mono);

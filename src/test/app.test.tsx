@@ -11,22 +11,25 @@ describe("portfolio app", () => {
         name: /sami bou khaled/i
       })
     ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^github$/i })).toHaveAttribute("href", "https://github.com/simenzzz");
+    expect(screen.getByRole("link", { name: /^linkedin$/i })).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/in/samibk/"
+    );
+    expect(screen.getByRole("link", { name: /email samibk2005@gmail\.com/i })).toHaveAttribute(
+      "href",
+      "mailto:samibk2005@gmail.com"
+    );
     expect(screen.getByRole("heading", { name: /applied work/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /research papers/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /deckgraph/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /tideway/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /lucubrum/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /realtime collaboration platform/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /cove/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /v2g anomaly detection/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /uncertainty-routed 3-tier waf/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /deckgraph live demo/i })).toHaveAttribute(
-      "href",
-      "https://deckgraph-demo.onrender.com"
-    );
-    expect(screen.getByRole("link", { name: /realtime collaboration platform live demo/i })).toHaveAttribute(
-      "href",
-      "https://nexus.wizconsults.com"
-    );
+    expect(screen.queryByRole("link", { name: /deckgraph live demo/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /cove live demo/i })).not.toBeInTheDocument();
     expect(screen.getAllByText(/import a curated github repo/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/edge-to-cloud telemetry pipeline/i).length).toBeGreaterThan(0);
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
@@ -41,6 +44,7 @@ describe("portfolio app", () => {
 
     const dialog = screen.getByRole("dialog", { name: /deckgraph details/i });
 
+    expect(within(dialog).getByText(/applied work/i)).toBeInTheDocument();
     expect(within(dialog).getByRole("heading", { name: /deckgraph/i })).toBeInTheDocument();
     expect(within(dialog).getByText(/import a curated github repo/i)).toBeInTheDocument();
     expect(within(dialog).getByRole("link", { name: /repository/i })).toBeInTheDocument();
@@ -71,16 +75,16 @@ describe("portfolio app", () => {
     );
   });
 
-  it("opens realtime collaboration project details with the live demo link", async () => {
+  it("opens Cove project details with the live demo link", async () => {
     const user = userEvent.setup();
 
     renderRoute(["/"]);
 
-    await user.click(screen.getByRole("button", { name: /realtime collaboration platform/i }));
+    await user.click(screen.getByRole("button", { name: /cove/i }));
 
-    const dialog = screen.getByRole("dialog", { name: /realtime collaboration platform details/i });
+    const dialog = screen.getByRole("dialog", { name: /cove details/i });
 
-    expect(within(dialog).getByRole("heading", { name: /realtime collaboration platform/i })).toBeInTheDocument();
+    expect(within(dialog).getByRole("heading", { name: /cove/i })).toBeInTheDocument();
     expect(within(dialog).getByText(/synchronized watch rooms/i)).toBeInTheDocument();
     expect(within(dialog).getByRole("link", { name: /live demo/i })).toHaveAttribute(
       "href",
@@ -97,12 +101,22 @@ describe("portfolio app", () => {
 
     const dialog = screen.getByRole("dialog", { name: /uncertainty-routed 3-tier waf details/i });
 
+    expect(within(dialog).getByText(/research paper/i)).toBeInTheDocument();
     expect(within(dialog).getByRole("heading", { name: /uncertainty-routed 3-tier waf/i })).toBeInTheDocument();
     expect(within(dialog).getByText(/a waf should not force one detector/i)).toBeInTheDocument();
     expect(within(dialog).getAllByText(/0\.972/i).length).toBeGreaterThan(0);
     expect(within(dialog).getAllByText(/3\.04%/i).length).toBeGreaterThan(0);
     expect(within(dialog).getByText(/91\.6%/i)).toBeInTheDocument();
     expect(within(dialog).getByText(/the evidence is csic-only/i)).toBeInTheDocument();
+    expect(within(dialog).getByRole("link", { name: /open research/i })).toHaveAttribute(
+      "href",
+      "/papers/uncertainty-routed-3-tier-waf.pdf"
+    );
+    expect(within(dialog).getByRole("link", { name: /research repo/i })).toHaveAttribute(
+      "href",
+      "https://github.com/simenzzz/WAF"
+    );
+    expect(within(dialog).queryByText(/v2g\s*\/\s*anomaly\s*\/\s*detection/i)).not.toBeInTheDocument();
     expect(within(dialog).queryByRole("link", { name: /demo|preview/i })).not.toBeInTheDocument();
 
     await user.click(within(dialog).getByRole("button", { name: /close details/i }));

@@ -52,7 +52,6 @@
 
 .tag {
   padding: 0.4rem 0.65rem;
-  border: 1px solid rgba(18, 18, 18, 0.12);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.5);
   font-family: var(--font-mono);

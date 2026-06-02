@@ -1,0 +1,188 @@
+\documentclass[11pt, a4paper]{article}
+
+% ── Packages ────────────────────────────────────────────────────────────────
+\usepackage[margin=0.75in, top=0.6in, bottom=0.6in]{geometry}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{array}
+\usepackage{tabularx}
+
+% ── Colors & links ──────────────────────────────────────────────────────────
+\definecolor{linkcolor}{RGB}{0, 80, 160}
+\hypersetup{colorlinks=true, urlcolor=linkcolor, linkcolor=linkcolor}
+
+% ── Section headings ────────────────────────────────────────────────────────
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{4pt}
+
+% ── List spacing ────────────────────────────────────────────────────────────
+\setlist[itemize]{leftmargin=1.5em, topsep=2pt, itemsep=1pt, parsep=0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+% ────────────────────────────────────────────────────────────────────────────
+\begin{document}
+
+% ── Header ──────────────────────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries SAMI BOU KHALED} \\[4pt]
+  {\large Computer Science Student} \\[6pt]
+  \faEnvelope\ \href{mailto:samibk2005@gmail.com}{samibk2005@gmail.com} \quad
+  \faPhone\ +961~76~490100 \quad
+  \faMapMarker*\ Beirut, Lebanon \\[2pt]
+  \faLinkedin\ \href{https://www.linkedin.com/in/samibk/}{linkedin.com/in/samibk} \quad
+  \faGithub\ \href{https://github.com/simenzzz}{github.com/simenzzz}
+\end{center}
+
+% ── About Me ────────────────────────────────────────────────────────────────
+\section{About Me}
+
+I am a dedicated and motivated third year computer science student at the Lebanese American
+University (LAU), passionate about coding, artificial intelligence, problem-solving and chess.
+My academic journey is driven by a desire to push the boundaries of technology and contribute
+to the digital future.
+
+% ── Education ───────────────────────────────────────────────────────────────
+\section{Education}
+
+\textbf{BS, Computer Science} \hfill GPA: 3.81 \\
+Lebanese American University, Beirut, LB \hfill 2023 -- 2026
+
+\medskip
+
+\textbf{French Baccalaureate (Scientific)} \\
+Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
+
+% ── Working Experience ──────────────────────────────────────────────────────
+\section{Working Experience}
+
+\textbf{Data Analyst} \hfill June 2024 -- November 2025 \\
+\textit{MaidsCC --- Dubai (Remote)}
+
+\begin{itemize}
+  \item I wrote and optimized SQL queries and used Tableau's powerful features---including
+        calculated fields, filters, and dynamic visualizations---to analyze and present data.
+  \item I worked on the alerting system project by designing and implementing automated
+        notifications based on specific data triggers. My role involved integrating real-time
+        data insights to ensure timely alerts for stakeholders, enhancing operational efficiency.
+\end{itemize}
+
+% ── Projects ────────────────────────────────────────────────────────────────
+\section{Projects}
+
+\textbf{Deckgraph} \hfill
+  \href{https://github.com/simenzzz/Deckgraph}{github.com/simenzzz/Deckgraph} \\
+\textit{TypeScript, WebAssembly, React}
+\begin{itemize}
+  \item Installable CLI (\texttt{npx deckgraph}) and VS Code extension that builds a unified
+        dependency graph across npm, PyPI, Go, Cargo, and Maven, detecting cross-language
+        edges (gRPC/proto, FFI, OpenAPI) and flagging license violations.
+  \item Zero native dependencies --- all parsing via WebAssembly tree-sitter grammars;
+        live React dashboard with layered, filterable views.
+\end{itemize}
+
+\medskip
+
+\textbf{Tideway} \hfill
+  \href{https://github.com/simenzzz/tideway}{github.com/simenzzz/tideway} \\
+\textit{Rust, Distributed Systems, Edge Computing}
+\begin{itemize}
+  \item Production-grade Rust sensor pipeline ingesting 14--17M samples/s with durable
+        offline buffering and IBLT-based zone reconciliation ($\sim$93 bytes per differing record).
+  \item Ships Ed25519-signed transport, CRDT control-plane state, and federated drift
+        detection; 88\% line coverage across $\sim$710 tests, zero \texttt{unsafe} code.
+\end{itemize}
+
+\medskip
+
+\textbf{Lucubrum} \hfill
+  \href{https://lucubrum.vercel.app}{lucubrum.vercel.app} \\
+\textit{TypeScript, Python, Node.js, FastAPI}
+\begin{itemize}
+  \item Two-service platform (Node.js orchestrator + FastAPI curriculum service) generating
+        DAG-structured learning roadmaps with ranked YouTube resources and LLM-graded
+        adaptive exercises.
+  \item All LLM outputs schema-validated via Pydantic with retry logic and full audit logging;
+        provider (Gemini / Claude) swappable via config.
+\end{itemize}
+
+\medskip
+
+\textbf{Cove} \hfill
+  \href{https://nexus.wizconsults.com}{nexus.wizconsults.com} \\
+\textit{Rust, Axum, SvelteKit, SurrealDB, CRDTs}
+\begin{itemize}
+  \item Real-time collaboration platform with graph-based social connections
+        (follows, friends-of-friends discovery) backed by SurrealDB's graph model.
+  \item Room-actor WebSocket architecture with sequence-number resume; CRDT document
+        and whiteboard sync via Yrs (Rust Yjs port).
+\end{itemize}
+
+% ── Research ────────────────────────────────────────────────────────────────
+\section{Research}
+
+\textbf{V2G Anomaly Detection} \hfill 2026 $\cdot$ 2-person team \\
+\textit{Python, Transformers, Explainable AI} \hfill
+  \href{https://github.com/simenzzz/IntroML}{github.com/simenzzz/IntroML}
+\begin{itemize}
+  \item Multi-modal transformer (4 layers, $d$=128, 8 heads) fusing host and network tokens
+        for five-class EVSE attack detection on CICEVSE2024 under strict session-level holdout.
+  \item Achieved \textbf{90.30\% accuracy}, \textbf{0.695 macro-F1}, and \textbf{0.918 macro-AUC};
+        SHAP explanations across 18,944 attribution dimensions for analyst-facing evidence.
+\end{itemize}
+
+\medskip
+
+\textbf{Uncertainty-Routed 3-Tier WAF} \hfill 2026 $\cdot$ Solo \\
+\textit{Python, BiLSTM, Conformal Prediction} \hfill
+  \href{https://github.com/simenzzz/WAF}{github.com/simenzzz/WAF}
+\begin{itemize}
+  \item Three-tier cascading WAF: ReDoS-safe regex screening $\to$ temperature-calibrated
+        char-BiLSTM router $\to$ Mondrian conformal specialist trained on the uncertain slice.
+  \item Reached \textbf{0.972 F1} on CSIC2010, escalating only \textbf{3.04\%} of requests
+        to Tier 3 (FNR 0.022); saliency-driven feedback loop synthesizes new regex rules.
+\end{itemize}
+
+% ── Technical Skills ────────────────────────────────────────────────────────
+\section{Technical Skills}
+
+\begin{tabular}{@{} l l}
+  \textbf{Languages}   & Python, Rust, Java (Vanilla, Spring Boot),
+                          JavaScript (Vanilla, React), TypeScript, SQL, HTML/CSS \\
+  \textbf{Frameworks}  & Django, FastAPI, Node.js, React, SvelteKit, Spring Boot, Axum \\
+  \textbf{Tools}       & Git/GitHub, Tableau, Jira, Microsoft Suite \\
+  \textbf{Other}       & Data Analysis \\
+\end{tabular}
+
+% ── Soft Skills ─────────────────────────────────────────────────────────────
+\section{Soft Skills}
+
+Analytical Problem Solving \quad$\cdot$\quad
+Consistent \quad$\cdot$\quad
+Team Coordination \& Collaboration
+
+% ── Certifications ──────────────────────────────────────────────────────────
+\section{Certifications}
+
+\begin{itemize}
+  \item The Complete Python Bootcamp from Zero to Hero in Python
+  \item Django 4 and Python Full-Stack Developer Masterclass
+  \item French Baccalaureate (Scientific)
+\end{itemize}
+
+% ── Activities ──────────────────────────────────────────────────────────────
+\section{Activities}
+
+\begin{itemize}
+  \item Member of the Chess Club at LAU.
+  \item Helped with organizing activities with the Beirut Community Center NGO.
+  \item Tutored students for the introductory computer science course at LAU
+        (CSC243: Introduction to Object-Oriented Programming).
+\end{itemize}
+
+\end{document}

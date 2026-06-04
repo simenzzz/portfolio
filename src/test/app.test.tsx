@@ -25,13 +25,13 @@ describe("portfolio app", () => {
     expect(screen.getByRole("button", { name: /deckgraph/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /tideway/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /lucubrum/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /cove/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /\bcove\b/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /v2g anomaly detection/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /uncertainty-routed 3-tier waf/i })).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /deckgraph live demo/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /cove live demo/i })).not.toBeInTheDocument();
-    expect(screen.getAllByText(/import a curated github repo/i).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/edge-to-cloud telemetry pipeline/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/unified dependency graph/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/research-grade rust pipeline/i).length).toBeGreaterThan(0);
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
@@ -46,7 +46,7 @@ describe("portfolio app", () => {
 
     expect(within(dialog).getByText(/applied work/i)).toBeInTheDocument();
     expect(within(dialog).getByRole("heading", { name: /deckgraph/i })).toBeInTheDocument();
-    expect(within(dialog).getByText(/import a curated github repo/i)).toBeInTheDocument();
+    expect(within(dialog).getByText(/unified dependency graph/i)).toBeInTheDocument();
     expect(within(dialog).getByRole("link", { name: /repository/i })).toBeInTheDocument();
     expect(within(dialog).getByRole("link", { name: /live demo/i })).toHaveAttribute(
       "href",
@@ -64,7 +64,7 @@ describe("portfolio app", () => {
     const dialog = screen.getByRole("dialog", { name: /tideway details/i });
 
     expect(within(dialog).getByRole("heading", { name: /tideway/i })).toBeInTheDocument();
-    expect(within(dialog).getByText(/reconcile zones after partitions/i)).toBeInTheDocument();
+    expect(within(dialog).getByText(/reconciles zones on reconnection/i)).toBeInTheDocument();
     expect(within(dialog).getByRole("link", { name: /repository/i })).toHaveAttribute(
       "href",
       "https://github.com/simenzzz/tideway"
@@ -80,12 +80,12 @@ describe("portfolio app", () => {
 
     renderRoute(["/"]);
 
-    await user.click(screen.getByRole("button", { name: /cove/i }));
+    await user.click(screen.getByRole("button", { name: /\bcove\b/i }));
 
     const dialog = screen.getByRole("dialog", { name: /cove details/i });
 
     expect(within(dialog).getByRole("heading", { name: /cove/i })).toBeInTheDocument();
-    expect(within(dialog).getByText(/synchronized watch rooms/i)).toBeInTheDocument();
+    expect(within(dialog).getByText(/synchronized watch-together rooms/i)).toBeInTheDocument();
     expect(within(dialog).getByRole("link", { name: /live demo/i })).toHaveAttribute(
       "href",
       "https://nexus.wizconsults.com"
@@ -103,7 +103,7 @@ describe("portfolio app", () => {
 
     expect(within(dialog).getByText(/research paper/i)).toBeInTheDocument();
     expect(within(dialog).getByRole("heading", { name: /uncertainty-routed 3-tier waf/i })).toBeInTheDocument();
-    expect(within(dialog).getByText(/a waf should not force one detector/i)).toBeInTheDocument();
+    expect(within(dialog).getByText(/three-tier cascading waf/i)).toBeInTheDocument();
     expect(within(dialog).getAllByText(/0\.972/i).length).toBeGreaterThan(0);
     expect(within(dialog).getAllByText(/3\.04%/i).length).toBeGreaterThan(0);
     expect(within(dialog).getByText(/91\.6%/i)).toBeInTheDocument();

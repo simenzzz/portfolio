@@ -36,16 +36,17 @@
   \faPhone\ +961~76~490100 \quad
   \faMapMarker*\ Beirut, Lebanon \\[2pt]
   \faLinkedin\ \href{https://www.linkedin.com/in/samibk/}{linkedin.com/in/samibk} \quad
-  \faGithub\ \href{https://github.com/simenzzz}{github.com/simenzzz}
+  \faGithub\ \href{https://github.com/simenzzz}{github.com/simenzzz} \quad
+  \faGlobe\ \href{https://portfolio-seven-blond-dtco2iqu7a.vercel.app/}{Portfolio}
 \end{center}
 
-% ── About Me ────────────────────────────────────────────────────────────────
-\section{About Me}
+% ── Summary ─────────────────────────────────────────────────────────────────
+\section{Summary}
 
-I am a dedicated and motivated third year computer science student at the Lebanese American
-University (LAU), passionate about coding, artificial intelligence, problem-solving and chess.
-My academic journey is driven by a desire to push the boundaries of technology and contribute
-to the digital future.
+Computer Science student (GPA 3.81, graduating 2026) who works across the full stack and the
+systems beneath it: production Rust services and distributed pipelines, applied ML and
+security research, and deployed full-stack web apps in Python, TypeScript, and Java. Seeking a
+new-grad software engineering role; open to remote work and relocation.
 
 % ── Education ───────────────────────────────────────────────────────────────
 \section{Education}
@@ -62,11 +63,11 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 \section{Working Experience}
 
 \textbf{Data Analyst} \hfill June 2024 -- November 2025 \\
-\textit{MaidsCC --- Dubai (Remote)}
+\textit{MaidsCC - Dubai (Remote)}
 
 \begin{itemize}
-  \item I wrote and optimized SQL queries and used Tableau's powerful features---including
-        calculated fields, filters, and dynamic visualizations---to analyze and present data.
+  \item I wrote and optimized SQL queries and used Tableau's powerful features, including
+        calculated fields, filters, and dynamic visualizations, to analyze and present data.
   \item I worked on the alerting system project by designing and implementing automated
         notifications based on specific data triggers. My role involved integrating real-time
         data insights to ensure timely alerts for stakeholders, enhancing operational efficiency.
@@ -77,87 +78,127 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 
 \textbf{Deckgraph} \hfill
   \href{https://github.com/simenzzz/Deckgraph}{github.com/simenzzz/Deckgraph} \\
-\textit{TypeScript, WebAssembly, React}
+\textit{TypeScript, Node.js, web-tree-sitter (WASM), Babel, React 19, Vite, pnpm/Turbo}
 \begin{itemize}
-  \item Installable CLI (\texttt{npx deckgraph}) and VS Code extension that builds a unified
-        dependency graph across npm, PyPI, Go, Cargo, and Maven, detecting cross-language
-        edges (gRPC/proto, FFI, OpenAPI) and flagging license violations.
-  \item Zero native dependencies --- all parsing via WebAssembly tree-sitter grammars;
-        live React dashboard with layered, filterable views.
+  \item Installable CLI (\texttt{npx deckgraph}) and VS Code extension unifying dependency
+        graphs across five ecosystems (npm, PyPI, Go, Cargo, Maven) under one adapter
+        abstraction, with confidence-scored cross-language edge detectors (gRPC/proto, FFI,
+        OpenAPI, build, config) and license-violation flagging.
+  \item Zero native dependencies: JS/TS parsed via Babel, other languages via WebAssembly
+        tree-sitter; lazy three-phase analysis with incremental watch-mode (xxhash content
+        dedup) and a live React dashboard over layered, filterable views; 1{,}100+ tests.
 \end{itemize}
 
 \medskip
 
 \textbf{Tideway} \hfill
   \href{https://github.com/simenzzz/tideway}{github.com/simenzzz/tideway} \\
-\textit{Rust, Distributed Systems, Edge Computing}
+\textit{Rust, Tokio, DTN/BPv7, rateless IBLT, CRDTs (OR-Set/LWW/RGA), Ed25519 + AES-GCM, fjall LSM}
 \begin{itemize}
-  \item Production-grade Rust sensor pipeline ingesting 14--17M samples/s with durable
-        offline buffering and IBLT-based zone reconciliation ($\sim$93 bytes per differing record).
-  \item Ships Ed25519-signed transport, CRDT control-plane state, and federated drift
-        detection; 88\% line coverage across $\sim$710 tests, zero \texttt{unsafe} code.
+  \item High-throughput Rust edge-to-cloud telemetry pipeline (14--17M samples/s) with durable
+        offline buffering on a pure-Rust LSM and rateless-IBLT set reconciliation
+        ($\sim$93 bytes per differing record, estimate-free).
+  \item Three-tier federation over a delay-tolerant (BPv7) transport with Ed25519 bundle signing
+        and AES-256-GCM, CRDT control-plane state (OR-Set / LWW / RGA), and FedDrift drift
+        detection tolerant to node dropout; 88.7\% line coverage across $\sim$777 tests, zero
+        \texttt{unsafe} code, 17 accepted ADRs.
 \end{itemize}
 
 \medskip
 
 \textbf{Lucubrum} \hfill
-  \href{https://lucubrum.vercel.app}{lucubrum.vercel.app} \\
-\textit{TypeScript, Python, Node.js, FastAPI}
+  \href{https://github.com/simenzzz/lucubrum}{github.com/simenzzz/lucubrum} \\
+\textit{TypeScript, Express, Python, FastAPI, Pydantic v2, Postgres (Supabase), Redis (Upstash), React}
 \begin{itemize}
-  \item Two-service platform (Node.js orchestrator + FastAPI curriculum service) generating
-        DAG-structured learning roadmaps with ranked YouTube resources and LLM-graded
-        adaptive exercises.
-  \item All LLM outputs schema-validated via Pydantic with retry logic and full audit logging;
-        provider (Gemini / Claude) swappable via config.
+  \item Two-service platform (Express orchestrator + FastAPI curriculum service) generating
+        DAG-structured learning roadmaps with prerequisite-validated nodes (cycle, reference,
+        and schedule checks), ranked YouTube resources, and mastery-adaptive, LLM-graded
+        exercises across five question types.
+  \item Every LLM output schema-validated (Pydantic v2 in Python, AJV at the Node boundary)
+        with retry logic, per-artifact audit metadata, and config-swappable providers
+        (Gemini / Claude / Zai); hierarchical Redis-to-Postgres caching with MCP-based
+        staleness detection.
 \end{itemize}
 
 \medskip
 
 \textbf{Cove} \hfill
-  \href{https://nexus.wizconsults.com}{nexus.wizconsults.com} \\
-\textit{Rust, Axum, SvelteKit, SurrealDB, CRDTs}
+  \href{https://github.com/simenzzz/cove}{github.com/simenzzz/cove} \\
+\textit{Rust, Axum, Tokio, SurrealDB (graph), Redis, Yrs (CRDT), SvelteKit, Docker / Caddy}
 \begin{itemize}
-  \item Real-time collaboration platform with graph-based social connections
-        (follows, friends-of-friends discovery) backed by SurrealDB's graph model.
-  \item Room-actor WebSocket architecture with sequence-number resume; CRDT document
-        and whiteboard sync via Yrs (Rust Yjs port).
+  \item Tokio room-actor WebSocket protocol with Redis-backed per-channel sequence numbers
+        for gap-aware resume (event replay or full resync), single-use 30\,s WebSocket tickets,
+        and Argon2 auth with rotating refresh tokens.
+  \item Graph-native social discovery (follows, friends-of-friends) via SurrealDB edge
+        traversal; unified CRDT collaboration through Yrs (Rust Yjs port) for documents,
+        whiteboards, and synchronized watch rooms; repository-trait architecture with
+        Prometheus metrics.
+\end{itemize}
+
+\medskip
+
+\textbf{MVCCP: Multi-hop VANET Charging Coordination Protocol} \hfill
+  \href{https://github.com/haidar-88/Capstone}{github.com/haidar-88/Capstone} \\
+\textit{Python, C++, ns-3 (802.11p WAVE PHY/MAC), SUMO + TraCI, cppyy, QoS-OLSR} \hfill Team capstone
+\begin{itemize}
+  \item Decentralized four-layer protocol (neighbor discovery $\to$ MPR-forwarded provider
+        advertisement $\to$ charging negotiation $\to$ platoon coordination) with dynamic
+        platoon-head election and adaptive multi-hop TTL forwarding for in-motion wireless EV
+        charging across a VANET.
+  \item SUMO + ns-3 co-simulation orchestrator bridging discrete 0.5\,s mobility steps with
+        sub-step 802.11p WAVE PHY/MAC packet events (20\,dBm, 5.9\,GHz), plus Dijkstra
+        edge-graph optimization for lowest-loss energy-transfer paths.
+\end{itemize}
+
+\medskip
+
+\textbf{Movies Application} \hfill
+\textit{Java, Spring Boot, JPA, MySQL, React, Docker} 
+\begin{itemize}
+  \item Full-stack movie catalog: Spring Boot REST API (JPA/MySQL persistence,
+        Swagger-documented endpoints) with a React + Vite frontend, fully containerized
+        via Docker Compose.
 \end{itemize}
 
 % ── Research ────────────────────────────────────────────────────────────────
 \section{Research}
 
-\textbf{V2G Anomaly Detection} \hfill 2026 $\cdot$ 2-person team \\
-\textit{Python, Transformers, Explainable AI} \hfill
-  \href{https://github.com/simenzzz/IntroML}{github.com/simenzzz/IntroML}
+\textbf{V2G Anomaly Detection} \hfill 2026 $\cdot$ 2-person team \quad
+  \href{https://github.com/simenzzz/IntroML}{github.com/simenzzz/IntroML} \\
+\textit{Python, PyTorch, Transformers, SHAP, scikit-learn}
 \begin{itemize}
-  \item Multi-modal transformer (4 layers, $d$=128, 8 heads) fusing host and network tokens
-        for five-class EVSE attack detection on CICEVSE2024 under strict session-level holdout.
+  \item Multi-modal transformer (4 layers, $d$=128, 8 heads) fusing host (16k-dim) and network
+        (2.7k-dim) event tokens for five-class EVSE attack detection (Benign, Recon, DoS,
+        Backdoor, Cryptojacking) on CICEVSE2024 under strict session-level holdout.
   \item Achieved \textbf{90.30\% accuracy}, \textbf{0.695 macro-F1}, and \textbf{0.918 macro-AUC};
         SHAP explanations across 18,944 attribution dimensions for analyst-facing evidence.
 \end{itemize}
 
 \medskip
 
-\textbf{Uncertainty-Routed 3-Tier WAF} \hfill 2026 $\cdot$ Solo \\
-\textit{Python, BiLSTM, Conformal Prediction} \hfill
-  \href{https://github.com/simenzzz/WAF}{github.com/simenzzz/WAF}
+\textbf{Uncertainty-Routed 3-Tier WAF} \hfill 2026 $\cdot$ Solo \quad
+  \href{https://github.com/simenzzz/WAF}{github.com/simenzzz/WAF} \\
+\textit{Python, PyTorch, char-BiLSTM, Mondrian Conformal Prediction, Integrated Gradients, FastAPI}
 \begin{itemize}
   \item Three-tier cascading WAF: ReDoS-safe regex screening $\to$ temperature-calibrated
-        char-BiLSTM router $\to$ Mondrian conformal specialist trained on the uncertain slice.
+        char-BiLSTM router ($\tau$=0.084/0.184) $\to$ per-endpoint Mondrian conformal
+        specialist trained on the uncertain slice.
   \item Reached \textbf{0.972 F1} on CSIC2010, escalating only \textbf{3.04\%} of requests
-        to Tier 3 (FNR 0.022); saliency-driven feedback loop synthesizes new regex rules.
+        to Tier 3 (FNR 0.022); an Integrated-Gradients saliency loop synthesizes new regex
+        rules validated against a benign holdout.
 \end{itemize}
 
 % ── Technical Skills ────────────────────────────────────────────────────────
 \section{Technical Skills}
 
-\begin{tabular}{@{} l l}
+\begin{tabularx}{\linewidth}{@{} l X}
   \textbf{Languages}   & Python, Rust, Java (Vanilla, Spring Boot),
                           JavaScript (Vanilla, React), TypeScript, SQL, HTML/CSS \\
-  \textbf{Frameworks}  & Django, FastAPI, Node.js, React, SvelteKit, Spring Boot, Axum \\
-  \textbf{Tools}       & Git/GitHub, Tableau, Jira, Microsoft Suite \\
-  \textbf{Other}       & Data Analysis \\
-\end{tabular}
+  \textbf{Frameworks}  & Django, FastAPI, Node.js, React, SvelteKit, Spring Boot,
+                          Spring Data JPA, Axum, Swagger/OpenAPI \\
+  \textbf{Tools}       & Git/GitHub, Docker / Docker Compose, Tableau, Jira, Microsoft Suite \\
+  \textbf{Other}       & Data Analysis, Network Simulation (ns-3 / SUMO) \\
+\end{tabularx}
 
 % ── Soft Skills ─────────────────────────────────────────────────────────────
 \section{Soft Skills}
@@ -165,15 +206,6 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 Analytical Problem Solving \quad$\cdot$\quad
 Consistent \quad$\cdot$\quad
 Team Coordination \& Collaboration
-
-% ── Certifications ──────────────────────────────────────────────────────────
-\section{Certifications}
-
-\begin{itemize}
-  \item The Complete Python Bootcamp from Zero to Hero in Python
-  \item Django 4 and Python Full-Stack Developer Masterclass
-  \item French Baccalaureate (Scientific)
-\end{itemize}
 
 % ── Activities ──────────────────────────────────────────────────────────────
 \section{Activities}

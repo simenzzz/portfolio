@@ -3,8 +3,8 @@
   --paper-warm: #f8f1df;
   --paper-soft: #e2d2b7;
   --ink: #2c241b;
-  --copy: #4f4435;
-  --muted: #766956;
+  --copy: #473c2d;
+  --muted: #5e5341;
   --rule: rgba(88, 67, 42, 0.18);
   --rule-strong: rgba(88, 67, 42, 0.34);
   --panel: rgba(253, 247, 229, 0.86);
@@ -28,7 +28,7 @@
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.42;
+  opacity: 0.22;
   background-image:
     radial-gradient(rgba(80, 58, 35, 0.12) 0.55px, transparent 0.55px),
     linear-gradient(90deg, transparent 0, transparent calc(100% - 1px), rgba(88, 67, 42, 0.05) 100%);
@@ -84,6 +84,7 @@
 .briefGrid h3,
 .metricGrid dd span {
   font-family: var(--font-mono);
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -91,7 +92,7 @@
 .eyebrow {
   margin: 0;
   color: var(--rust);
-  font-size: 0.52rem;
+  font-size: 0.66rem;
   font-style: italic;
 }
 
@@ -101,7 +102,7 @@
   font-family: var(--font-display);
   font-size: clamp(0.98rem, 1.72vw, 1.82rem);
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 0.96;
   letter-spacing: 0;
   text-wrap: balance;
@@ -195,20 +196,20 @@
   font-family: var(--font-display);
   font-size: clamp(0.98rem, 1.45vw, 1.36rem);
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: 0;
 }
 
 .rowHeader span {
   color: var(--muted);
-  font-size: 0.56rem;
+  font-size: 0.66rem;
   font-style: italic;
 }
 
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(0.72rem, 1.45vw, 1.12rem);
   align-items: stretch;
 }
@@ -219,11 +220,11 @@
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(7.2rem, 0.36fr) minmax(0, 1fr);
+  grid-template-columns: minmax(8.5rem, 0.34fr) minmax(0, 1fr);
   grid-template-rows: minmax(0, 1fr) 1.6rem;
   gap: clamp(0.5rem, 0.72vw, 0.68rem);
   min-width: 0;
-  height: clamp(9.5rem, 11.2vw, 10.85rem);
+  height: clamp(11.5rem, 15vw, 13.5rem);
   padding: clamp(0.64rem, 0.82vw, 0.8rem);
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--card-accent) 34%, var(--rule));
@@ -275,6 +276,10 @@
 
 .entryRow:first-of-type .card:nth-child(3) {
   --card-accent: var(--burgundy);
+}
+
+.entryRow:first-of-type .card:nth-child(4) {
+  --card-accent: #5f6b48;
 }
 
 .entryRow:nth-of-type(2) .card:nth-child(1) {
@@ -337,7 +342,7 @@
   border-radius: 5px;
   background: rgba(255, 251, 238, 0.82);
   color: var(--ink);
-  font-size: 0.46rem;
+  font-size: 0.6rem;
   font-style: italic;
 }
 
@@ -366,7 +371,7 @@
   font-family: inherit;
   font-size: clamp(0.95rem, 1.18vw, 1.18rem);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.12;
   letter-spacing: 0;
   -webkit-box-orient: vertical;
@@ -381,7 +386,7 @@
   line-height: 1.38;
   font-style: normal;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
 }
 
 .tagRail {
@@ -394,7 +399,7 @@
   min-width: 0;
   overflow: hidden;
   color: var(--muted);
-  font-size: 0.46rem;
+  font-size: 0.6rem;
   font-style: italic;
   align-content: start;
 }
@@ -553,7 +558,7 @@
   font-family: inherit;
   font-size: clamp(1.82rem, 3.08vw, 2.97rem);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.12;
   letter-spacing: 0;
 }
@@ -659,7 +664,7 @@
 
 .metricGrid dd span {
   color: var(--forest);
-  font-size: 0.56rem;
+  font-size: 0.64rem;
 }
 
 .caveat {
@@ -740,7 +745,8 @@
     background: rgba(255, 251, 238, 0.55);
     color: var(--muted);
     font: inherit;
-    font-size: 0.48rem;
+    font-weight: 600;
+    font-size: 0.6rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }

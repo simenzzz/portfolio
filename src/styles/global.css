@@ -16,7 +16,7 @@
   --color-rule-strong: rgba(88, 67, 42, 0.24);
   font-family: var(--font-body);
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color-ink);
   background: var(--color-paper);
   font-synthesis: none;
@@ -85,7 +85,7 @@ img {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.08;
+  opacity: 0.05;
   background-image:
     radial-gradient(rgba(88, 67, 42, 0.18) 0.55px, transparent 0.55px),
     radial-gradient(rgba(88, 67, 42, 0.12) 0.4px, transparent 0.4px);

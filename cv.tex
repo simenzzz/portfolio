@@ -43,10 +43,11 @@
 % ── Summary ─────────────────────────────────────────────────────────────────
 \section{Summary}
 
-Computer Science student (GPA 3.81, graduating 2026) who works across the full stack and the
-systems beneath it: production Rust services and distributed pipelines, applied ML and
-security research, and deployed full-stack web apps in Python, TypeScript, and Java. Seeking a
-new-grad software engineering role; open to remote work and relocation.
+Computer Science graduate (GPA 3.81/4.00, Class of 2026) with experience across
+the full stack and the systems beneath it, including production Rust services,
+distributed pipelines, applied ML and security research, and deployed web
+applications in Python, TypeScript, and Java. Seeking a new-grad software
+engineering role; open to remote work and relocation.
 
 % ── Education ───────────────────────────────────────────────────────────────
 \section{Education}
@@ -75,6 +76,52 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 
 % ── Projects ────────────────────────────────────────────────────────────────
 \section{Projects}
+
+\textbf{Lucubrum} \hfill
+  \href{https://github.com/simenzzz/lucubrum}{github.com/simenzzz/lucubrum} \\
+\textit{TypeScript, Express, Python, FastAPI, Pydantic v2, Postgres (Supabase), Redis (Upstash), React}
+\begin{itemize}
+  \item Two-service platform (Express orchestrator + FastAPI curriculum service) generating
+        DAG-structured learning roadmaps with prerequisite-validated nodes (cycle, reference,
+        and schedule checks), ranked YouTube resources, and mastery-adaptive, LLM-graded
+        exercises across five question types.
+  \item Every LLM output schema-validated (Pydantic v2 in Python, AJV at the Node boundary)
+        with retry logic, per-artifact audit metadata, and config-swappable providers
+        (Gemini / Claude / Zai); hierarchical Redis-to-Postgres caching with MCP-based
+        staleness detection.
+\end{itemize}
+
+\medskip
+
+\textbf{Ishtirak} \hfill
+  \href{https://github.com/simenzzz/Ishtirak}{github.com/simenzzz/Ishtirak} \\
+\textit{Java 21 / Spring Boot, Python / FastAPI, Node / Express, React, PostgreSQL, RabbitMQ, Redis}
+\begin{itemize}
+  \item Polyglot, multi-tenant SaaS for Lebanon's neighborhood diesel-generator
+        operators: subscribers, amperage tiers, meter readings, and atomic monthly
+        billing (USD/LBP) in a Java/Spring system-of-record.
+  \item Python/FastAPI streaming theft detection over meter-reading deltas; Node/Express
+        gateway pushing real-time outage countdowns and tampering alerts over WebSockets;
+        RabbitMQ topic exchange and Redis, with every entity and event hard-scoped by
+        \texttt{operatorId} for strict tenant isolation.
+\end{itemize}
+
+\medskip
+
+\textbf{Council} \hfill
+  \href{https://github.com/simenzzz/Council}{github.com/simenzzz/Council} \\
+\textit{Go (net/http, coder/websocket, errgroup), React Three Fiber, TypeScript, z.ai (GLM)}
+\begin{itemize}
+  \item Live AI-debate web app: a panel of 3--5 personas (skeptic, optimist, domain
+        expert, contrarian) answer and rebut each other across multiple rounds, streaming
+        in parallel into a multi-column UI before a moderator synthesizes a verdict.
+  \item Go backend running fan-out/fan-in; N persona goroutines stream tagged token
+        deltas into one channel that a single writer drains to the WebSocket (writes are
+        not concurrency-safe); multiplexing GLM/z.ai streams; React Three Fiber stage
+        of procedural 3D robots animating to the active speaker.
+\end{itemize}
+
+\medskip
 
 \textbf{Deckgraph} \hfill
   \href{https://github.com/simenzzz/Deckgraph}{github.com/simenzzz/Deckgraph} \\
@@ -106,59 +153,7 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 
 \medskip
 
-\textbf{Lucubrum} \hfill
-  \href{https://github.com/simenzzz/lucubrum}{github.com/simenzzz/lucubrum} \\
-\textit{TypeScript, Express, Python, FastAPI, Pydantic v2, Postgres (Supabase), Redis (Upstash), React}
-\begin{itemize}
-  \item Two-service platform (Express orchestrator + FastAPI curriculum service) generating
-        DAG-structured learning roadmaps with prerequisite-validated nodes (cycle, reference,
-        and schedule checks), ranked YouTube resources, and mastery-adaptive, LLM-graded
-        exercises across five question types.
-  \item Every LLM output schema-validated (Pydantic v2 in Python, AJV at the Node boundary)
-        with retry logic, per-artifact audit metadata, and config-swappable providers
-        (Gemini / Claude / Zai); hierarchical Redis-to-Postgres caching with MCP-based
-        staleness detection.
-\end{itemize}
-
-\medskip
-
-\textbf{Cove} \hfill
-  \href{https://github.com/simenzzz/cove}{github.com/simenzzz/cove} \\
-\textit{Rust, Axum, Tokio, SurrealDB (graph), Redis, Yrs (CRDT), SvelteKit, Docker / Caddy}
-\begin{itemize}
-  \item Tokio room-actor WebSocket protocol with Redis-backed per-channel sequence numbers
-        for gap-aware resume (event replay or full resync), single-use 30\,s WebSocket tickets,
-        and Argon2 auth with rotating refresh tokens.
-  \item Graph-native social discovery (follows, friends-of-friends) via SurrealDB edge
-        traversal; unified CRDT collaboration through Yrs (Rust Yjs port) for documents,
-        whiteboards, and synchronized watch rooms; repository-trait architecture with
-        Prometheus metrics.
-\end{itemize}
-
-\medskip
-
-\textbf{MVCCP: Multi-hop VANET Charging Coordination Protocol} \hfill
-  \href{https://github.com/haidar-88/Capstone}{github.com/haidar-88/Capstone} \\
-\textit{Python, C++, ns-3 (802.11p WAVE PHY/MAC), SUMO + TraCI, cppyy, QoS-OLSR} \hfill Team capstone
-\begin{itemize}
-  \item Decentralized four-layer protocol (neighbor discovery $\to$ MPR-forwarded provider
-        advertisement $\to$ charging negotiation $\to$ platoon coordination) with dynamic
-        platoon-head election and adaptive multi-hop TTL forwarding for in-motion wireless EV
-        charging across a VANET.
-  \item SUMO + ns-3 co-simulation orchestrator bridging discrete 0.5\,s mobility steps with
-        sub-step 802.11p WAVE PHY/MAC packet events (20\,dBm, 5.9\,GHz), plus Dijkstra
-        edge-graph optimization for lowest-loss energy-transfer paths.
-\end{itemize}
-
-\medskip
-
-\textbf{Movies Application} \hfill
-\textit{Java, Spring Boot, JPA, MySQL, React, Docker} 
-\begin{itemize}
-  \item Full-stack movie catalog: Spring Boot REST API (JPA/MySQL persistence,
-        Swagger-documented endpoints) with a React + Vite frontend, fully containerized
-        via Docker Compose.
-\end{itemize}
+\textit{The rest of my projects can be found on my GitHub: \href{https://github.com/simenzzz}{github.com/simenzzz}.}
 
 % ── Research ────────────────────────────────────────────────────────────────
 \section{Research}
@@ -192,7 +187,7 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 \section{Technical Skills}
 
 \begin{tabularx}{\linewidth}{@{} l X}
-  \textbf{Languages}   & Python, Rust, Java (Vanilla, Spring Boot),
+  \textbf{Languages}   & Python, Rust, Go, Java (Vanilla, Spring Boot),
                           JavaScript (Vanilla, React), TypeScript, SQL, HTML/CSS \\
   \textbf{Frameworks}  & Django, FastAPI, Node.js, React, SvelteKit, Spring Boot,
                           Spring Data JPA, Axum, Swagger/OpenAPI \\

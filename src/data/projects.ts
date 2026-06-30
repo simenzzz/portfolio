@@ -42,6 +42,33 @@ export const products: ProductEntry[] = [
     visualKey: "realtime-collaboration-platform",
     liveUrl: "https://nexus.wizconsults.com",
     liveLabel: "Live Demo"
+  },
+  {
+    slug: "careconnect",
+    title: "CareConnect",
+    summary:
+      "A Lebanon-based two-sided marketplace connecting parents with vetted child- and pet-sitters: parents describe their care needs while sitters onboard through CV + KYC verification, a deterministic matching engine ranks candidates by proximity, rating, experience, and availability, and bookings are scheduled and paid (Whish Money) over a React 19 + Firebase frontend and a Node/Express + PostgreSQL backend. Double-booking is blocked at the database level via a PostgreSQL EXCLUDE constraint (btree_gist), payment callbacks are re-verified server-side rather than trusted from query params, and both apps fail fast under Zod-validated environment schemas.",
+    tags: ["TypeScript", "React", "PostgreSQL", "Marketplace"],
+    visualKey: "careconnect",
+    repoUrl: "https://github.com/simenzzz/CareConnect"
+  },
+  {
+    slug: "ishtirak",
+    title: "Ishtirak",
+    summary:
+      "A polyglot, multi-tenant SaaS for Lebanon's neighborhood diesel-generator operators (ishtirak / اشتراك): a Java/Spring system-of-record manages subscribers, amperage tiers, meter readings, and atomic monthly billing in USD/LBP; a Python/FastAPI streaming service flags meter tampering and electricity theft from reading deltas; and a Node/Express gateway pushes real-time outage countdowns and tampering alerts over WebSockets. The services are wired by a RabbitMQ topic exchange (at-least-once domain events) and Redis, with every entity, query, and event hard-scoped by operatorId for strict tenant isolation.",
+    tags: ["Java", "Microservices", "Event-Driven", "Multi-Tenant"],
+    visualKey: "ishtirak",
+    repoUrl: "https://github.com/simenzzz/Ishtirak"
+  },
+  {
+    slug: "council",
+    title: "Council",
+    summary:
+      "A live AI-debate web app: ask one question and a panel of 3–5 personas (skeptic, optimist, domain expert, contrarian) answer and rebut each other across multiple rounds, streaming in parallel into a multi-column UI before a moderator synthesizes a final verdict. The Go backend runs the signature fan-out/fan-in pattern—N persona goroutines stream tagged token deltas into a single channel that exactly one writer drains to the WebSocket, because WebSocket writes are not concurrency-safe—multiplexing GLM/z.ai streams over one socket, with a React Three Fiber stage of procedural 3D robots that animate to the active speaker.",
+    tags: ["Go", "Concurrency", "WebSockets", "AI Agents"],
+    visualKey: "council",
+    repoUrl: "https://github.com/simenzzz/Council"
   }
 ];
 

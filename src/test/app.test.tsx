@@ -28,10 +28,16 @@ describe("portfolio app", () => {
     expect(screen.getByRole("button", { name: /\bcove\b/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /v2g anomaly detection/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /uncertainty-routed 3-tier waf/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /careconnect/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /ishtirak/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /\bcouncil\b/i })).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /deckgraph live demo/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /cove live demo/i })).not.toBeInTheDocument();
     expect(screen.getAllByText(/unified dependency graph/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/research-grade rust pipeline/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/vetted child- and pet-sitters/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/diesel-generator operators/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/fan-out\/fan-in/i).length).toBeGreaterThan(0);
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 

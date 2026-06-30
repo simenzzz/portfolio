@@ -282,6 +282,18 @@
   --card-accent: #5f6b48;
 }
 
+.entryRow:first-of-type .card:nth-child(5) {
+  --card-accent: #3f546e;
+}
+
+.entryRow:first-of-type .card:nth-child(6) {
+  --card-accent: #35615c;
+}
+
+.entryRow:first-of-type .card:nth-child(7) {
+  --card-accent: #6a4a63;
+}
+
 .entryRow:nth-of-type(2) .card:nth-child(1) {
   --card-accent: #85622f;
 }

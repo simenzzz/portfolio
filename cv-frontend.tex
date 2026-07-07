@@ -43,11 +43,12 @@
 % ── Summary ─────────────────────────────────────────────────────────────────
 \section{Summary}
 
-Computer Science graduate (GPA 3.81/4.00, Class of 2026) with experience across
-the full stack and the systems beneath it, including production Rust services,
-distributed pipelines, applied ML and security research, and deployed web
-applications in Python, TypeScript, and Java. Seeking a new-grad software
-engineering role; open to remote work and relocation.
+Computer Science graduate (GPA 3.81/4.00, Class of 2026) and frontend-focused
+engineer who builds accessible, design-system-driven React interfaces in
+TypeScript, from a hand-authored CSS token system and reusable component
+primitives to real-time streaming UIs and interactive 3D scenes, backed by
+full-stack and applied-ML experience across Python, Go, Java, and Rust. Seeking a
+React-focused frontend engineering role; open to remote work and relocation.
 
 % ── Education ───────────────────────────────────────────────────────────────
 \section{Education}
@@ -77,78 +78,84 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 % ── Projects ────────────────────────────────────────────────────────────────
 \section{Projects}
 
-\textbf{Lucubrum} \hfill
-  \href{https://github.com/simenzzz/lucubrum}{github.com/simenzzz/lucubrum} \\
-\textit{TypeScript, Express, Python, FastAPI, Pydantic v2, Postgres (Supabase), Redis (Upstash), React}
+\textbf{CareConnect} \hfill
+  \href{https://github.com/simenzzz/CareConnect}{github.com/simenzzz/CareConnect} \\
+\textit{React 19, TypeScript, Vite (rolldown), React Router 7, Firebase,  Vitest / React Testing Library}
 \begin{itemize}
-  \item Two-service platform (Express orchestrator + FastAPI curriculum service) generating
-        DAG-structured learning roadmaps with prerequisite-validated nodes (cycle, reference,
-        and schedule checks), ranked YouTube resources, and mastery-adaptive, LLM-graded
-        exercises across five question types.
-  \item Every LLM output schema-validated (Pydantic v2 in Python, AJV at the Node boundary)
-        with retry logic, per-artifact audit metadata, and config-swappable providers
-        (Gemini / Claude / Zai); hierarchical Redis-to-Postgres caching with MCP-based
-        staleness detection.
-\end{itemize}
-
-\medskip
-
-\textbf{Ishtirak} \hfill
-  \href{https://github.com/simenzzz/Ishtirak}{github.com/simenzzz/Ishtirak} \\
-\textit{Java 21 / Spring Boot, Python / FastAPI, Node / Express, React, PostgreSQL, RabbitMQ, Redis}
-\begin{itemize}
-  \item Polyglot, multi-tenant SaaS for Lebanon's neighborhood diesel-generator
-        operators: subscribers, amperage tiers, meter readings, and atomic monthly
-        billing (USD/LBP) in a Java/Spring system-of-record.
-  \item Python/FastAPI streaming theft detection over meter-reading deltas; Node/Express
-        gateway pushing real-time outage countdowns and tampering alerts over WebSockets;
-        RabbitMQ topic exchange and Redis, with every entity and event hard-scoped by
-        \texttt{operatorId} for strict tenant isolation.
+  \item Designed and built a React 19 + TypeScript single-page app for a
+        two-sided care-booking marketplace: a hand-authored CSS design-token system
+        (fluid \texttt{clamp()} type scale, variable display fonts, motion easing tokens)
+        with \textbf{no CSS framework}, driving a reusable \texttt{ui/} primitive library
+        (Button, Card, Field, Modal, Rating, Badge, Avatar) for one cohesive visual language.
+  \item Role-based routing (React Router 7) with auth-gated protected routes and an
+        app-wide error boundary; Context-based Firebase auth and a services layer that
+        cleanly separates data-fetching from UI; accessibility built in
+        (\texttt{prefers-reduced-motion}, ARIA, focus management) with LCP/CLS performance
+        tuning, and components tested under Vitest + React Testing Library.
 \end{itemize}
 
 \medskip
 
 \textbf{Council} \hfill
   \href{https://github.com/simenzzz/Council}{github.com/simenzzz/Council} \\
-\textit{Go (net/http, coder/websocket, errgroup), React Three Fiber, TypeScript, z.ai (GLM)}
+\textit{React, React Three Fiber, TypeScript, Vite, Go (net/http, coder/websocket), z.ai (GLM)}
 \begin{itemize}
-  \item Live AI-debate web app: a panel of 3--5 personas (skeptic, optimist, domain
-        expert, contrarian) answer and rebut each other across multiple rounds, streaming
-        in parallel into a multi-column UI before a moderator synthesizes a verdict.
-  \item Go backend running fan-out/fan-in; N persona goroutines stream tagged token
-        deltas into one channel that a single writer drains to the WebSocket (writes are
-        not concurrency-safe); multiplexing GLM/z.ai streams; React Three Fiber stage
-        of procedural 3D robots animating to the active speaker.
+  \item Live AI-debate web app whose \textbf{real-time multi-column React UI} streams token
+        deltas from a panel of 3--5 personas (skeptic, optimist, domain expert, contrarian)
+        in parallel over a single WebSocket, with a \textbf{React Three Fiber} stage of
+        procedural 3D robots that animate to the active speaker before a moderator column
+        synthesizes the verdict.
+  \item Go backend runs a fan-out/fan-in pattern: N persona goroutines stream tagged
+        token deltas into one channel drained by a single writer to the socket (writes are
+        not concurrency-safe), multiplexing GLM/z.ai streams behind the UI.
 \end{itemize}
 
 \medskip
 
 \textbf{Deckgraph} \hfill
   \href{https://github.com/simenzzz/Deckgraph}{github.com/simenzzz/Deckgraph} \\
-\textit{TypeScript, Node.js, web-tree-sitter (WASM), Babel, React 19, Vite, pnpm/Turbo}
+\textit{React 19, Vite, TypeScript, Node.js, web-tree-sitter (WASM), Babel, pnpm/Turbo}
 \begin{itemize}
-  \item Installable CLI (\texttt{npx deckgraph}) and VS Code extension unifying dependency
-        graphs across five ecosystems (npm, PyPI, Go, Cargo, Maven) under one adapter
-        abstraction, with confidence-scored cross-language edge detectors (gRPC/proto, FFI,
-        OpenAPI, build, config) and license-violation flagging.
-  \item Zero native dependencies: JS/TS parsed via Babel, other languages via WebAssembly
-        tree-sitter; lazy three-phase analysis with incremental watch-mode (xxhash content
-        dedup) and a live React dashboard over layered, filterable views; 1{,}100+ tests.
+  \item Live React 19 + Vite dashboard rendering layered, filterable dependency-graph
+        views with incremental watch-mode updates (xxhash content dedup) so the graph
+        stays in sync as code changes; shipped as an installable CLI
+        (\texttt{npx deckgraph}).
+  \item Underlying engine unifies dependency graphs across five ecosystems (npm, PyPI, Go,
+        Cargo, Maven) under one adapter abstraction with confidence-scored cross-language
+        edge detectors (gRPC/proto, FFI, OpenAPI) and license-violation flagging; zero
+        native dependencies (Babel + WebAssembly tree-sitter); 1{,}100+ tests.
 \end{itemize}
 
 \medskip
 
-\textbf{Tideway} \hfill
-  \href{https://github.com/simenzzz/tideway}{github.com/simenzzz/tideway} \\
-\textit{Rust, Tokio, DTN/BPv7, rateless IBLT, CRDTs (OR-Set/LWW/RGA), Ed25519 + AES-GCM, fjall LSM}
+\textbf{Lucubrum} \hfill
+  \href{https://github.com/simenzzz/lucubrum}{github.com/simenzzz/lucubrum} \\
+\textit{React, TypeScript, Express, Python, FastAPI, Pydantic v2, Postgres (Supabase), Redis}
 \begin{itemize}
-  \item High-throughput Rust edge-to-cloud telemetry pipeline (14--17M samples/s) with durable
-        offline buffering on a pure-Rust LSM and rateless-IBLT set reconciliation
-        ($\sim$93 bytes per differing record, estimate-free).
-  \item Three-tier federation over a delay-tolerant (BPv7) transport with Ed25519 bundle signing
-        and AES-256-GCM, CRDT control-plane state (OR-Set / LWW / RGA), and FedDrift drift
-        detection tolerant to node dropout; 88.7\% line coverage across $\sim$777 tests, zero
-        \texttt{unsafe} code, 17 accepted ADRs.
+  \item React frontend for an adaptive-learning platform: renders DAG-structured learning
+        roadmaps with prerequisite-validated nodes, ranked YouTube resources, and
+        mastery-adaptive exercises across five question types, driving the learner through
+        each roadmap interactively.
+  \item Backed by a two-service platform (Express orchestrator + FastAPI curriculum service)
+        with every LLM output schema-validated (Pydantic v2 / AJV) and retry logic, plus
+        hierarchical Redis-to-Postgres caching and config-swappable providers
+        (Gemini / Claude / Zai).
+\end{itemize}
+
+\medskip
+
+\textbf{Ishtirak} \hfill
+  \href{https://github.com/simenzzz/Ishtirak}{github.com/simenzzz/Ishtirak} \\
+\textit{React, TypeScript, Java 21 / Spring Boot, Python / FastAPI, Node / Express, RabbitMQ, Redis}
+\begin{itemize}
+  \item React UI for Lebanon's neighborhood diesel-generator operators, consuming
+        \textbf{real-time outage countdowns and tampering alerts over WebSockets} and
+        surfacing subscribers, amperage tiers, meter readings, and monthly billing
+        (USD/LBP) for each operator.
+  \item Backed by a polyglot, multi-tenant system: a Java/Spring system-of-record, a
+        Python/FastAPI streaming theft-detection service over meter-reading deltas, and a
+        Node/Express WebSocket gateway, wired by a RabbitMQ topic exchange and Redis,
+        with every entity and event hard-scoped by \texttt{operatorId}.
 \end{itemize}
 
 \medskip
@@ -187,10 +194,14 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 \section{Technical Skills}
 
 \begin{tabularx}{\linewidth}{@{} l X}
-  \textbf{Languages}   & Python, Rust, Go, Java (Vanilla, Spring Boot),
-                          JavaScript (Vanilla, React), TypeScript, SQL, HTML/CSS \\
-  \textbf{Frameworks}  & Django, FastAPI, Node.js / Express, React, SvelteKit, Spring Boot,
-                          Spring Data JPA, Axum, Swagger/OpenAPI \\
+  \textbf{Languages}   & TypeScript, JavaScript (React), HTML/CSS, Python, Go,
+                          Java (Vanilla, Spring Boot), Rust, SQL \\
+  \textbf{Frameworks}  & React, React Router, Vite, SvelteKit, Node.js / Express, FastAPI,
+                          Django, Spring Boot, Spring Data JPA, Axum \\
+  \textbf{Frontend}    & Component-driven design systems, CSS custom-property tokens,
+                          responsive / fluid (\texttt{clamp()}) layout, accessibility
+                          (ARIA, \texttt{prefers-reduced-motion}), React Three Fiber,
+                          Vitest / React Testing Library \\
   \textbf{Tools}       & Git/GitHub, Docker / Docker Compose, Tableau, Jira, Microsoft Suite \\
   \textbf{Other}       & Data Analysis, Network Simulation (ns-3 / SUMO) \\
 \end{tabularx}

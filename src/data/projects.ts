@@ -40,7 +40,7 @@ export const products: ProductEntry[] = [
       "A Rust/Axum + SvelteKit collaboration platform backed by SurrealDB's graph data model for social connections (follows, friends-of-friends discovery, server recommendations). Real-time messaging runs via a room-actor WebSocket architecture with sequence numbers and resume capability; collaborative editing uses Yrs (Rust Yjs port) for conflict-free document and whiteboard sync, with synchronized watch-together rooms.",
     tags: ["Graph Database", "Real-Time Collaboration", "Actor Model", "Yrs / Yjs"],
     visualKey: "realtime-collaboration-platform",
-    liveUrl: "https://nexus.wizconsults.com",
+    liveUrl: "https://cove.samibk.com/",
     liveLabel: "Live Demo"
   },
   {

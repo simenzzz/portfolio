@@ -1,7 +1,7 @@
 \documentclass[11pt, a4paper]{article}
 
 % ── Packages ────────────────────────────────────────────────────────────────
-\usepackage[margin=0.75in, top=0.6in, bottom=0.6in]{geometry}
+\usepackage[margin=0.65in, top=0.5in, bottom=0.5in]{geometry}
 \usepackage{fontawesome5}
 \usepackage{hyperref}
 \usepackage{enumitem}
@@ -11,6 +11,7 @@
 \usepackage{lmodern}
 \usepackage{array}
 \usepackage{tabularx}
+\usepackage{needspace}
 
 % ── Colors & links ──────────────────────────────────────────────────────────
 \definecolor{linkcolor}{RGB}{0, 80, 160}
@@ -18,12 +19,12 @@
 
 % ── Section headings ────────────────────────────────────────────────────────
 \titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{4pt}
+\titlespacing{\section}{0pt}{8pt}{3pt}
 
 % ── List spacing ────────────────────────────────────────────────────────────
 \setlist[itemize]{leftmargin=1.5em, topsep=2pt, itemsep=1pt, parsep=0pt}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
+\setlength{\parskip}{3pt}
 
 % ────────────────────────────────────────────────────────────────────────────
 \begin{document}
@@ -77,7 +78,7 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 % ── Projects ────────────────────────────────────────────────────────────────
 \section{Projects}
 
-\textbf{Lucubrum} \hfill
+\needspace{7\baselineskip}\textbf{Lucubrum} \hfill
   \href{https://github.com/simenzzz/lucubrum}{github.com/simenzzz/lucubrum} \\
 \textit{TypeScript, Express, Python, FastAPI, Pydantic v2, Postgres (Supabase), Redis (Upstash), React}
 \begin{itemize}
@@ -92,7 +93,7 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 
 \medskip
 
-\textbf{Council} \hfill
+\needspace{7\baselineskip}\textbf{Council} \hfill
   \href{https://github.com/simenzzz/Council}{github.com/simenzzz/Council} \\
 \textit{Go (net/http, coder/websocket, errgroup), React Three Fiber, TypeScript, z.ai (GLM)}
 \begin{itemize}
@@ -107,7 +108,7 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 
 \medskip
 
-\textbf{Deckgraph} \hfill
+\needspace{7\baselineskip}\textbf{Deckgraph} \hfill
   \href{https://github.com/simenzzz/Deckgraph}{github.com/simenzzz/Deckgraph} \\
 \textit{TypeScript, Node.js, web-tree-sitter (WASM), Babel, React 19, Vite, pnpm/Turbo}
 \begin{itemize}
@@ -121,7 +122,7 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 
 \medskip
 
-\textbf{Ishtirak} \hfill
+\needspace{7\baselineskip}\textbf{Ishtirak} \hfill
   \href{https://github.com/simenzzz/Ishtirak}{github.com/simenzzz/Ishtirak} \\
 \textit{Java 21 / Spring Boot, Python / FastAPI, Node / Express, React, PostgreSQL, RabbitMQ, Redis}
 \begin{itemize}
@@ -138,7 +139,7 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 % ── Research ────────────────────────────────────────────────────────────────
 \section{Research}
 
-\textbf{Uncertainty-Routed 3-Tier WAF} \hfill 2026 $\cdot$ Solo \quad
+\needspace{7\baselineskip}\textbf{Uncertainty-Routed 3-Tier WAF} \hfill 2026 $\cdot$ Solo \quad
   \href{https://github.com/simenzzz/WAF}{github.com/simenzzz/WAF} \\
 \textit{Python, PyTorch, char-LSTM, Mondrian Conformal Prediction, FastAPI, Streamlit}
 \begin{itemize}

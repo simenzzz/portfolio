@@ -31,7 +31,7 @@
 % ── Header ──────────────────────────────────────────────────────────────────
 \begin{center}
   {\LARGE\bfseries SAMI BOU KHALED} \\[4pt]
-  {\large Computer Science Student} \\[6pt]
+  {\large Frontend \& AI Engineer} \\[6pt]
   \faEnvelope\ \href{mailto:samibk2005@gmail.com}{samibk2005@gmail.com} \quad
   \faPhone\ +961~76~490100 \quad
   \faMapMarker*\ Beirut, Lebanon \\[2pt]
@@ -46,9 +46,9 @@
 Computer Science graduate (GPA 3.81/4.00, Class of 2026) and frontend-focused
 engineer who builds accessible, design-system-driven React interfaces in
 TypeScript, from a hand-authored CSS token system and reusable component
-primitives to real-time streaming UIs and interactive 3D scenes, backed by
-full-stack and applied-ML experience across Python, Go, Java, and Rust. Seeking a
-React-focused frontend engineering role; open to remote work and relocation.
+primitives to real-time LLM streaming UIs and interactive 3D scenes, backed by
+full-stack and applied-ML experience across Python, Go, and Java. Seeking a
+React-focused frontend or AI engineering role; open to remote work and relocation.
 
 % ── Education ───────────────────────────────────────────────────────────────
 \section{Education}
@@ -68,11 +68,11 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 \textit{MaidsCC - Dubai (Remote)}
 
 \begin{itemize}
-  \item I wrote and optimized SQL queries and used Tableau's powerful features, including
-        calculated fields, filters, and dynamic visualizations, to analyze and present data.
-  \item I worked on the alerting system project by designing and implementing automated
-        notifications based on specific data triggers. My role involved integrating real-time
-        data insights to ensure timely alerts for stakeholders, enhancing operational efficiency.
+  \item Wrote and optimized SQL queries feeding Tableau dashboards, building
+        calculated fields and dynamic filters to surface operational metrics for
+        stakeholders.
+  \item Designed and shipped an automated alerting system triggering notifications
+        on defined data conditions, replacing manual monitoring of those metrics.
 \end{itemize}
 
 % ── Projects ────────────────────────────────────────────────────────────────
@@ -80,114 +80,76 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 
 \textbf{CareConnect} \hfill
   \href{https://github.com/simenzzz/CareConnect}{github.com/simenzzz/CareConnect} \\
-\textit{React 19, TypeScript, Vite (rolldown), React Router 7, Firebase,  Vitest / React Testing Library}
+\textit{React 19, TypeScript, Vite (rolldown), React Router 7, Firebase, i18next, Vitest / RTL}
 \begin{itemize}
-  \item Designed and built a React 19 + TypeScript single-page app for a
-        two-sided care-booking marketplace: a hand-authored CSS design-token system
-        (fluid \texttt{clamp()} type scale, variable display fonts, motion easing tokens)
-        with \textbf{no CSS framework}, driving a reusable \texttt{ui/} primitive library
-        (Button, Card, Field, Modal, Rating, Badge, Avatar) for one cohesive visual language.
-  \item Role-based routing (React Router 7) with auth-gated protected routes and an
-        app-wide error boundary; Context-based Firebase auth and a services layer that
-        cleanly separates data-fetching from UI; accessibility built in
-        (\texttt{prefers-reduced-motion}, ARIA, focus management) with LCP/CLS performance
-        tuning, and components tested under Vitest + React Testing Library.
+  \item Designed and built a two-sided care-booking SPA on a hand-authored CSS
+        token system (fluid \texttt{clamp()} display sizes, variable fonts, motion
+        tokens) with \textbf{no CSS framework}, driving a reusable \texttt{ui/}
+        primitive library of 17 components reused across 33 files.
+  \item Shipped role-based routing with auth-gated routes, an app-wide error
+        boundary, and labelled, ARIA-annotated controls with a global
+        \texttt{prefers-reduced-motion} reset, localized into English, French, and
+        Arabic with \textbf{full RTL layout support}.
 \end{itemize}
 
 \medskip
 
 \textbf{Council} \hfill
   \href{https://github.com/simenzzz/Council}{github.com/simenzzz/Council} \\
-\textit{React, React Three Fiber, TypeScript, Vite, Go (net/http, coder/websocket), z.ai (GLM)}
+\textit{React 19, React Three Fiber, TypeScript, Vite, Tailwind 4, Go, z.ai (GLM)}
 \begin{itemize}
-  \item Live AI-debate web app whose \textbf{real-time multi-column React UI} streams token
-        deltas from a panel of 3--5 personas (skeptic, optimist, domain expert, contrarian)
-        in parallel over a single WebSocket, with a \textbf{React Three Fiber} stage of
-        procedural 3D robots that animate to the active speaker before a moderator column
-        synthesizes the verdict.
-  \item Go backend runs a fan-out/fan-in pattern: N persona goroutines stream tagged
-        token deltas into one channel drained by a single writer to the socket (writes are
-        not concurrency-safe), multiplexing GLM/z.ai streams behind the UI.
+  \item Built a real-time multi-column React UI streaming token deltas from a
+        four-persona LLM panel in parallel over a single WebSocket, with a
+        \textbf{React Three Fiber} stage of procedural 3D robots animating to the
+        active speaker.
+  \item Separated a headless reducer core from rendering, enabling a playback
+        engine with adjustable speed and go-to-live catch-up, reduced-motion
+        support, and a mobile layout. \textbf{220 tests} across 41 files.
 \end{itemize}
 
 \medskip
 
 \textbf{Deckgraph} \hfill
   \href{https://github.com/simenzzz/Deckgraph}{github.com/simenzzz/Deckgraph} \\
-\textit{React 19, Vite, TypeScript, Node.js, web-tree-sitter (WASM), Babel, pnpm/Turbo}
+\textit{React 19, Vite, TypeScript, zustand, dagre, TanStack Virtual, Node.js, WASM tree-sitter}
 \begin{itemize}
-  \item Live React 19 + Vite dashboard rendering layered, filterable dependency-graph
-        views with incremental watch-mode updates (xxhash content dedup) so the graph
-        stays in sync as code changes; shipped as an installable CLI
-        (\texttt{npx deckgraph}).
-  \item Underlying engine unifies dependency graphs across five ecosystems (npm, PyPI, Go,
-        Cargo, Maven) under one adapter abstraction with confidence-scored cross-language
-        edge detectors (gRPC/proto, FFI, OpenAPI) and license-violation flagging; zero
-        native dependencies (Babel + WebAssembly tree-sitter); 1{,}100+ tests.
+  \item Published \texttt{deckgraph} to npm: its live React 19 dashboard streams
+        scan results over a WebSocket, laying out dependency graphs with dagre and
+        virtualizing the module and dependency tables with TanStack Virtual.
+  \item Kept the view in sync with the codebase through incremental watch-mode
+        updates with content-hash dedup, shipped as an installable CLI
+        (\texttt{npx deckgraph}). \textbf{1{,}200+ tests}, CI on every PR.
 \end{itemize}
 
 \medskip
 
 \textbf{Lucubrum} \hfill
   \href{https://github.com/simenzzz/lucubrum}{github.com/simenzzz/lucubrum} \\
-\textit{React, TypeScript, Express, Python, FastAPI, Pydantic v2, Postgres (Supabase), Redis}
+\textit{React, TypeScript, Vite PWA, TanStack Query, Radix UI, Tailwind, Monaco, three.js}
 \begin{itemize}
-  \item React frontend for an adaptive-learning platform: renders DAG-structured learning
-        roadmaps with prerequisite-validated nodes, ranked YouTube resources, and
-        mastery-adaptive exercises across five question types, driving the learner through
-        each roadmap interactively.
-  \item Backed by a two-service platform (Express orchestrator + FastAPI curriculum service)
-        with every LLM output schema-validated (Pydantic v2 / AJV) and retry logic, plus
-        hierarchical Redis-to-Postgres caching and config-swappable providers
-        (Gemini / Claude / Zai).
+  \item Built the React PWA for an adaptive-learning platform: renders
+        DAG-structured roadmaps with prerequisite-validated nodes, ranked video
+        resources, and mastery-adaptive exercises across five exercise types with an
+        embedded Monaco code editor.
+  \item Backed by two LLM services I also built (Express orchestrator, FastAPI
+        curriculum service) where every model response is schema-validated
+        (Pydantic v2 / AJV) with retries across three swappable providers.
 \end{itemize}
-
-\medskip
-
-\textbf{Ishtirak} \hfill
-  \href{https://github.com/simenzzz/Ishtirak}{github.com/simenzzz/Ishtirak} \\
-\textit{React, TypeScript, Java 21 / Spring Boot, Python / FastAPI, Node / Express, RabbitMQ, Redis}
-\begin{itemize}
-  \item React UI for Lebanon's neighborhood diesel-generator operators, consuming
-        \textbf{real-time outage countdowns and tampering alerts over WebSockets} and
-        surfacing subscribers, amperage tiers, meter readings, and monthly billing
-        (USD/LBP) for each operator.
-  \item Backed by a polyglot, multi-tenant system: a Java/Spring system-of-record, a
-        Python/FastAPI streaming theft-detection service over meter-reading deltas, and a
-        Node/Express WebSocket gateway, wired by a RabbitMQ topic exchange and Redis,
-        with every entity and event hard-scoped by \texttt{operatorId}.
-\end{itemize}
-
-\medskip
-
-
 
 % ── Research ────────────────────────────────────────────────────────────────
 \section{Research}
 
-\textbf{V2G Anomaly Detection} \hfill 2026 $\cdot$ 2-person team \quad
-  \href{https://github.com/simenzzz/IntroML}{github.com/simenzzz/IntroML} \\
-\textit{Python, PyTorch, Transformers, SHAP, scikit-learn}
-\begin{itemize}
-  \item Multi-modal transformer (4 layers, $d$=128, 8 heads) fusing host (16k-dim) and network
-        (2.7k-dim) event tokens for five-class EVSE attack detection (Benign, Recon, DoS,
-        Backdoor, Cryptojacking) on CICEVSE2024 under strict session-level holdout.
-  \item Achieved \textbf{90.30\% accuracy}, \textbf{0.695 macro-F1}, and \textbf{0.918 macro-AUC};
-        SHAP explanations across 18,944 attribution dimensions for analyst-facing evidence.
-\end{itemize}
-
-\medskip
-
 \textbf{Uncertainty-Routed 3-Tier WAF} \hfill 2026 $\cdot$ Solo \quad
   \href{https://github.com/simenzzz/WAF}{github.com/simenzzz/WAF} \\
-\textit{Python, PyTorch, char-BiLSTM, Mondrian Conformal Prediction, Integrated Gradients, FastAPI}
+\textit{Python, PyTorch, char-LSTM, Mondrian Conformal Prediction, FastAPI, Streamlit}
 \begin{itemize}
-  \item Three-tier cascading WAF: ReDoS-safe regex screening $\to$ temperature-calibrated
-        char-BiLSTM router ($\tau$=0.084/0.184) $\to$ per-endpoint Mondrian conformal
-        specialist trained on the uncertain slice.
-  \item Reached \textbf{0.972 F1} on CSIC2010, escalating only \textbf{3.04\%} of requests
-        to Tier 3 (FNR 0.022); an Integrated-Gradients saliency loop synthesizes new regex
-        rules validated against a benign holdout.
+  \item Designed a three-tier WAF that routes by model uncertainty: ReDoS-safe regex
+        screening $\to$ temperature-calibrated char-LSTM ($\tau=0.084/0.184$)
+        $\to$ Mondrian conformal specialist trained only on the uncertain slice.
+  \item Cut false negatives \textbf{19\%} against the Tier-2 router while escalating
+        only \textbf{3.04\%} of traffic to the specialist, and recovered 4--8 detections
+        per 100 on null-byte evasion mutations with no regression elsewhere;
+        a gradient-saliency loop promotes confident blocks into new Tier-1 rules.
 \end{itemize}
 
 % ── Technical Skills ────────────────────────────────────────────────────────
@@ -195,23 +157,18 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 
 \begin{tabularx}{\linewidth}{@{} l X}
   \textbf{Languages}   & TypeScript, JavaScript (React), HTML/CSS, Python, Go,
-                          Java (Vanilla, Spring Boot), Rust, SQL \\
-  \textbf{Frameworks}  & React, React Router, Vite, SvelteKit, Node.js / Express, FastAPI,
-                          Django, Spring Boot, Spring Data JPA, Axum \\
+                          Java (Spring Boot), Rust, SQL \\
   \textbf{Frontend}    & Component-driven design systems, CSS custom-property tokens,
                           responsive / fluid (\texttt{clamp()}) layout, accessibility
                           (ARIA, \texttt{prefers-reduced-motion}), React Three Fiber,
-                          Vitest / React Testing Library \\
-  \textbf{Tools}       & Git/GitHub, Docker / Docker Compose, Tableau, Jira, Microsoft Suite \\
-  \textbf{Other}       & Data Analysis, Network Simulation (ns-3 / SUMO) \\
+                          i18n, Vitest / React Testing Library, Playwright \\
+  \textbf{Frameworks}  & React, React Router, Vite, SvelteKit, Node.js / Express, FastAPI,
+                          Spring Boot, Spring Data JPA \\
+  \textbf{AI / ML}     & PyTorch, LLM orchestration (Gemini / Claude / GLM), streaming
+                          token UIs, structured output \& schema validation,
+                          LLM eval harnesses, conformal prediction \\
+  \textbf{Tools}       & Git/GitHub, Docker / Docker Compose, PostgreSQL, Redis, Tableau, Jira \\
 \end{tabularx}
-
-% ── Soft Skills ─────────────────────────────────────────────────────────────
-\section{Soft Skills}
-
-Analytical Problem Solving \quad$\cdot$\quad
-Consistent \quad$\cdot$\quad
-Team Coordination \& Collaboration
 
 % ── Activities ──────────────────────────────────────────────────────────────
 \section{Activities}

@@ -94,7 +94,7 @@ describe("portfolio app", () => {
     expect(within(dialog).getByText(/synchronized watch-together rooms/i)).toBeInTheDocument();
     expect(within(dialog).getByRole("link", { name: /live demo/i })).toHaveAttribute(
       "href",
-      "https://nexus.wizconsults.com"
+      "https://cove.samibk.com/"
     );
   });
 

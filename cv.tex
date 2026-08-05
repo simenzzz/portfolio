@@ -31,7 +31,7 @@
 % ── Header ──────────────────────────────────────────────────────────────────
 \begin{center}
   {\LARGE\bfseries SAMI BOU KHALED} \\[4pt]
-  {\large Computer Science Student} \\[6pt]
+  {\large Software \& AI Engineer} \\[6pt]
   \faEnvelope\ \href{mailto:samibk2005@gmail.com}{samibk2005@gmail.com} \quad
   \faPhone\ +961~76~490100 \quad
   \faMapMarker*\ Beirut, Lebanon \\[2pt]
@@ -43,11 +43,11 @@
 % ── Summary ─────────────────────────────────────────────────────────────────
 \section{Summary}
 
-Computer Science graduate (GPA 3.81/4.00, Class of 2026) with experience across
-the full stack and the systems beneath it, including production Rust services,
-distributed pipelines, applied ML and security research, and deployed web
-applications in Python, TypeScript, and Java. Seeking a new-grad software
-engineering role; open to remote work and relocation.
+Computer Science graduate (GPA 3.81/4.00, Class of 2026) who builds LLM-backed
+systems end to end: multi-provider orchestration with schema-validated model
+output and eval harnesses, alongside production web services in Python,
+TypeScript, Java, and Go and applied ML and security research. Seeking new-grad
+software or AI engineering roles; open to remote work and relocation.
 
 % ── Education ───────────────────────────────────────────────────────────────
 \section{Education}
@@ -67,11 +67,11 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
 \textit{MaidsCC - Dubai (Remote)}
 
 \begin{itemize}
-  \item I wrote and optimized SQL queries and used Tableau's powerful features, including
-        calculated fields, filters, and dynamic visualizations, to analyze and present data.
-  \item I worked on the alerting system project by designing and implementing automated
-        notifications based on specific data triggers. My role involved integrating real-time
-        data insights to ensure timely alerts for stakeholders, enhancing operational efficiency.
+  \item Wrote and optimized SQL queries feeding Tableau dashboards, building
+        calculated fields and dynamic filters to surface operational metrics for
+        stakeholders.
+  \item Designed and shipped an automated alerting system triggering notifications
+        on defined data conditions, replacing manual monitoring of those metrics.
 \end{itemize}
 
 % ── Projects ────────────────────────────────────────────────────────────────
@@ -81,29 +81,13 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
   \href{https://github.com/simenzzz/lucubrum}{github.com/simenzzz/lucubrum} \\
 \textit{TypeScript, Express, Python, FastAPI, Pydantic v2, Postgres (Supabase), Redis (Upstash), React}
 \begin{itemize}
-  \item Two-service platform (Express orchestrator + FastAPI curriculum service) generating
-        DAG-structured learning roadmaps with prerequisite-validated nodes (cycle, reference,
-        and schedule checks), ranked YouTube resources, and mastery-adaptive, LLM-graded
-        exercises across five question types.
-  \item Every LLM output schema-validated (Pydantic v2 in Python, AJV at the Node boundary)
-        with retry logic, per-artifact audit metadata, and config-swappable providers
-        (Gemini / Claude / Zai); hierarchical Redis-to-Postgres caching with MCP-based
-        staleness detection.
-\end{itemize}
-
-\medskip
-
-\textbf{Ishtirak} \hfill
-  \href{https://github.com/simenzzz/Ishtirak}{github.com/simenzzz/Ishtirak} \\
-\textit{Java 21 / Spring Boot, Python / FastAPI, Node / Express, React, PostgreSQL, RabbitMQ, Redis}
-\begin{itemize}
-  \item Polyglot, multi-tenant SaaS for Lebanon's neighborhood diesel-generator
-        operators: subscribers, amperage tiers, meter readings, and atomic monthly
-        billing (USD/LBP) in a Java/Spring system-of-record.
-  \item Python/FastAPI streaming theft detection over meter-reading deltas; Node/Express
-        gateway pushing real-time outage countdowns and tampering alerts over WebSockets;
-        RabbitMQ topic exchange and Redis, with every entity and event hard-scoped by
-        \texttt{operatorId} for strict tenant isolation.
+  \item Built and deployed a three-service LLM platform (Express orchestrator,
+        FastAPI curriculum service, React PWA) generating prerequisite-validated
+        DAG learning roadmaps and mastery-adaptive exercises across five exercise types.
+  \item Made LLM output trustworthy at the boundary: every response validated
+        against shared JSON Schema (Pydantic v2 / AJV) with retries, three
+        swappable providers (Gemini, Claude, GLM) behind one interface, and a
+        versioned eval harness scoring schema-validity across six prompt families.
 \end{itemize}
 
 \medskip
@@ -112,13 +96,13 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
   \href{https://github.com/simenzzz/Council}{github.com/simenzzz/Council} \\
 \textit{Go (net/http, coder/websocket, errgroup), React Three Fiber, TypeScript, z.ai (GLM)}
 \begin{itemize}
-  \item Live AI-debate web app: a panel of 3--5 personas (skeptic, optimist, domain
-        expert, contrarian) answer and rebut each other across multiple rounds, streaming
-        in parallel into a multi-column UI before a moderator synthesizes a verdict.
-  \item Go backend running fan-out/fan-in; N persona goroutines stream tagged token
-        deltas into one channel that a single writer drains to the WebSocket (writes are
-        not concurrency-safe); multiplexing GLM/z.ai streams; React Three Fiber stage
-        of procedural 3D robots animating to the active speaker.
+  \item Built a live multi-agent debate app where a four-persona panel and a
+        moderator argue across 2--8 rounds, each persona streaming token deltas in
+        parallel into a multi-column React UI.
+  \item Fanned N concurrent streaming LLM calls into one channel drained by a
+        single WebSocket writer, since concurrent writes are unsafe; added per-IP
+        rate limiting, a SQLite daily quota, and graceful shutdown, verified under
+        \texttt{go test -race}.
 \end{itemize}
 
 \medskip
@@ -127,80 +111,60 @@ Coll\`ege \'Elys\'ee, Beirut, LB \hfill 2021 -- 2023
   \href{https://github.com/simenzzz/Deckgraph}{github.com/simenzzz/Deckgraph} \\
 \textit{TypeScript, Node.js, web-tree-sitter (WASM), Babel, React 19, Vite, pnpm/Turbo}
 \begin{itemize}
-  \item Installable CLI (\texttt{npx deckgraph}) and VS Code extension unifying dependency
-        graphs across five ecosystems (npm, PyPI, Go, Cargo, Maven) under one adapter
-        abstraction, with confidence-scored cross-language edge detectors (gRPC/proto, FFI,
-        OpenAPI, build, config) and license-violation flagging.
-  \item Zero native dependencies: JS/TS parsed via Babel, other languages via WebAssembly
-        tree-sitter; lazy three-phase analysis with incremental watch-mode (xxhash content
-        dedup) and a live React dashboard over layered, filterable views; 1{,}100+ tests.
+  \item Published \texttt{deckgraph} to npm: a CLI and VS Code extension unifying
+        dependency graphs across five ecosystems (npm, PyPI, Go, Cargo, Maven) with
+        confidence-scored cross-language edges over gRPC/proto, FFI, and OpenAPI.
+  \item Parses through Babel and WebAssembly tree-sitter so \texttt{npx deckgraph}
+        needs no native build toolchain; incremental watch-mode with content-hash
+        dedup drives a live React dashboard. \textbf{1{,}200+ tests}, CI on every PR.
 \end{itemize}
 
 \medskip
 
-\textbf{Tideway} \hfill
-  \href{https://github.com/simenzzz/tideway}{github.com/simenzzz/tideway} \\
-\textit{Rust, Tokio, DTN/BPv7, rateless IBLT, CRDTs (OR-Set/LWW/RGA), Ed25519 + AES-GCM, fjall LSM}
+\textbf{Ishtirak} \hfill
+  \href{https://github.com/simenzzz/Ishtirak}{github.com/simenzzz/Ishtirak} \\
+\textit{Java 21 / Spring Boot, Python / FastAPI, Node / Express, React, PostgreSQL, RabbitMQ, Redis}
 \begin{itemize}
-  \item High-throughput Rust edge-to-cloud telemetry pipeline (14--17M samples/s) with durable
-        offline buffering on a pure-Rust LSM and rateless-IBLT set reconciliation
-        ($\sim$93 bytes per differing record, estimate-free).
-  \item Three-tier federation over a delay-tolerant (BPv7) transport with Ed25519 bundle signing
-        and AES-256-GCM, CRDT control-plane state (OR-Set / LWW / RGA), and FedDrift drift
-        detection tolerant to node dropout; 88.7\% line coverage across $\sim$777 tests, zero
-        \texttt{unsafe} code, 17 accepted ADRs.
+  \item Built a multi-tenant platform for Lebanon's neighborhood generator operators:
+        a Java/Spring system-of-record handling subscribers, amperage tiers, meter
+        readings, and idempotency-keyed monthly billing in USD/LBP.
+  \item Wired four polyglot services over a RabbitMQ topic exchange with dead-letter
+        queues and a transactional outbox, every tenant-owned query scoped by
+        \texttt{operatorId}; a Python consumer flags meter tampering from
+        Redis-windowed reading deltas, and a Node gateway pushes outage
+        countdowns and alerts over WebSockets.
 \end{itemize}
-
-\medskip
-
-
 
 % ── Research ────────────────────────────────────────────────────────────────
 \section{Research}
 
-\textbf{V2G Anomaly Detection} \hfill 2026 $\cdot$ 2-person team \quad
-  \href{https://github.com/simenzzz/IntroML}{github.com/simenzzz/IntroML} \\
-\textit{Python, PyTorch, Transformers, SHAP, scikit-learn}
-\begin{itemize}
-  \item Multi-modal transformer (4 layers, $d$=128, 8 heads) fusing host (16k-dim) and network
-        (2.7k-dim) event tokens for five-class EVSE attack detection (Benign, Recon, DoS,
-        Backdoor, Cryptojacking) on CICEVSE2024 under strict session-level holdout.
-  \item Achieved \textbf{90.30\% accuracy}, \textbf{0.695 macro-F1}, and \textbf{0.918 macro-AUC};
-        SHAP explanations across 18,944 attribution dimensions for analyst-facing evidence.
-\end{itemize}
-
-\medskip
-
 \textbf{Uncertainty-Routed 3-Tier WAF} \hfill 2026 $\cdot$ Solo \quad
   \href{https://github.com/simenzzz/WAF}{github.com/simenzzz/WAF} \\
-\textit{Python, PyTorch, char-BiLSTM, Mondrian Conformal Prediction, Integrated Gradients, FastAPI}
+\textit{Python, PyTorch, char-LSTM, Mondrian Conformal Prediction, FastAPI, Streamlit}
 \begin{itemize}
-  \item Three-tier cascading WAF: ReDoS-safe regex screening $\to$ temperature-calibrated
-        char-BiLSTM router ($\tau$=0.084/0.184) $\to$ per-endpoint Mondrian conformal
-        specialist trained on the uncertain slice.
-  \item Reached \textbf{0.972 F1} on CSIC2010, escalating only \textbf{3.04\%} of requests
-        to Tier 3 (FNR 0.022); an Integrated-Gradients saliency loop synthesizes new regex
-        rules validated against a benign holdout.
+  \item Designed a three-tier WAF that routes by model uncertainty: ReDoS-safe regex
+        screening $\to$ temperature-calibrated char-LSTM ($\tau=0.084/0.184$)
+        $\to$ Mondrian conformal specialist trained only on the uncertain slice.
+  \item Cut false negatives \textbf{19\%} against the Tier-2 router while escalating
+        only \textbf{3.04\%} of traffic to the specialist, and recovered 4--8 detections
+        per 100 on null-byte evasion mutations with no regression elsewhere;
+        a gradient-saliency loop promotes confident blocks into new Tier-1 rules.
 \end{itemize}
 
 % ── Technical Skills ────────────────────────────────────────────────────────
 \section{Technical Skills}
 
 \begin{tabularx}{\linewidth}{@{} l X}
-  \textbf{Languages}   & Python, Rust, Go, Java (Vanilla, Spring Boot),
-                          JavaScript (Vanilla, React), TypeScript, SQL, HTML/CSS \\
-  \textbf{Frameworks}  & Django, FastAPI, Node.js / Express, React, SvelteKit, Spring Boot,
-                          Spring Data JPA, Axum, Swagger/OpenAPI \\
-  \textbf{Tools}       & Git/GitHub, Docker / Docker Compose, Tableau, Jira, Microsoft Suite \\
-  \textbf{Other}       & Data Analysis, Network Simulation (ns-3 / SUMO) \\
+  \textbf{Languages}   & Python, Go, Java (Spring Boot), JavaScript (React),
+                          TypeScript, Rust, SQL, HTML/CSS \\
+  \textbf{AI / ML}     & PyTorch, LLM orchestration (Gemini / Claude / GLM),
+                          structured output \& schema validation, prompt versioning,
+                          LLM eval harnesses, conformal prediction, scikit-learn \\
+  \textbf{Frameworks}  & FastAPI, Node.js / Express, React, SvelteKit,
+                          Spring Boot, Spring Data JPA, Swagger/OpenAPI \\
+  \textbf{Tools}       & Git/GitHub, Docker / Docker Compose, PostgreSQL, Redis,
+                          RabbitMQ, Tableau, Jira \\
 \end{tabularx}
-
-% ── Soft Skills ─────────────────────────────────────────────────────────────
-\section{Soft Skills}
-
-Analytical Problem Solving \quad$\cdot$\quad
-Consistent \quad$\cdot$\quad
-Team Coordination \& Collaboration
 
 % ── Activities ──────────────────────────────────────────────────────────────
 \section{Activities}

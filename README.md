@@ -50,8 +50,9 @@ pnpm preview    # serve the production build locally
 
 ## CV
 
-`cv.tex` and `cv-frontend.tex` hold the LaTeX sources for the two CV variants
-the site links to.
+`cv/cv.tex` and `cv/cv-frontend.tex` hold the LaTeX sources for the two CV
+variants the site links to. Both use the shared layout in `cv/resume.sty`.
+Upload that file with the `.tex` file when you compile on Overleaf.
 
 ## License
 

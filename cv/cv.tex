@@ -1,0 +1,115 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage{resume}
+
+\begin{document}
+
+\cvheader{SAMI BOU KHALED}{Software \& AI Engineer}{%
+  \href{mailto:samibk2005@gmail.com}{samibk2005@gmail.com} \sep
+  +961 76 490100 \sep
+  Beirut, Lebanon \sep
+  \href{https://www.linkedin.com/in/samibk/}{linkedin.com/in/samibk} \sep
+  \href{https://github.com/simenzzz}{github.com/simenzzz} \sep
+  \href{https://samibk.com/}{samibk.com}}
+
+% ── Profile ─────────────────────────────────────────────────────────────────
+\section{Professional Profile}
+
+Computer Science graduate from the Lebanese American University (GPA
+3.81/4.00, High Distinction). I build backend services and LLM features, and I
+ship them with tests and CI. During my degree I worked 18 months as a remote
+data analyst, writing SQL for a Dubai-based company. Looking for software or AI
+engineering roles; open to relocation and remote work.
+
+% ── Core strengths ──────────────────────────────────────────────────────────
+\section{Core Strengths}
+
+\strength{AI systems}{One interface over Gemini, Claude, and GLM;
+  schema-checked model output with retries; prompt evals; PyTorch}
+\strength{Backend}{Java/Spring Boot, Python/FastAPI, Go, Node/Express; REST,
+  WebSockets, RabbitMQ, PostgreSQL, Redis}
+\strength{Testing \& delivery}{JUnit, Testcontainers, pytest, Vitest,
+  Playwright, Go race tests; GitHub Actions, Docker Compose, Render}
+\strength{Security research}{Model calibration, conformal prediction,
+  adversarial evasion tests}
+
+% ── Education ───────────────────────────────────────────────────────────────
+\section{Education}
+
+\entry{BS, Computer Science}{2023 -- 2026}{Lebanese American University,
+  Beirut, Lebanon \sep GPA 3.81/4.00, High Distinction}
+\vspace{3pt}
+\entry{French Baccalaureate, Scientific}{2021 -- 2023}{Coll\`ege \'Elys\'ee,
+  Beirut, Lebanon \sep Mention Tr\`es Bien}
+
+% ── Experience ──────────────────────────────────────────────────────────────
+\section{Experience}
+
+\entry{Data Analyst}{June 2024 -- November 2025}{MaidsCC, Dubai (Remote)}
+\begin{itemize}
+  \item Wrote and tuned the SQL behind the team's Tableau dashboards, with
+        calculated fields and filters so stakeholders could slice the data
+        themselves.
+  \item Set up alerts that fire when a metric crosses a set condition, which
+        replaced checking those numbers by hand.
+\end{itemize}
+
+% ── Projects ────────────────────────────────────────────────────────────────
+\section{Selected Projects}
+
+\project{Lucubrum}{https://github.com/simenzzz/lucubrum}{github.com/simenzzz/lucubrum}%
+  {TypeScript, Express, Python, FastAPI, Pydantic v2, PostgreSQL (Supabase), Redis (Upstash), React}
+\begin{itemize}
+  \item Built and deployed an adaptive learning app (Express API, FastAPI
+        curriculum service, React PWA) that turns a topic into a roadmap ordered
+        by prerequisites, with exercises in five formats that adapt to mastery.
+  \item Checked every model reply against a shared JSON Schema (Pydantic v2
+        and AJV) with retries, so Gemini, Claude, and GLM can be swapped
+        behind one interface.
+  \item Wrote an eval script that scores six prompt types for schema validity
+        on each prompt version, so I can compare prompt changes by the numbers.
+        The two services have 1{,}000+ tests.
+\end{itemize}
+
+\vspace{3pt}
+
+\project{Ishtirak}{https://github.com/simenzzz/Ishtirak}{github.com/simenzzz/Ishtirak}%
+  {Java 21, Spring Boot, Python, FastAPI, Node, Express, React, PostgreSQL, RabbitMQ, Redis}
+\begin{itemize}
+  \item Built a multi-tenant billing platform for Lebanon's neighborhood
+        generator operators: subscribers, amperage tiers, meter readings, and
+        monthly bills in USD and LBP, with idempotency keys against duplicate bills.
+  \item Connected four services through RabbitMQ with dead-letter queues and a
+        transactional outbox, with every query scoped to one tenant.
+  \item Set up CI that runs JUnit with Testcontainers, pytest, and Playwright
+        end-to-end tests against the full Docker Compose stack.
+\end{itemize}
+
+% ── Research ────────────────────────────────────────────────────────────────
+\section{Research}
+
+\researchentry{Uncertainty-Routed 3-Tier WAF}{2026 \sep Solo}%
+  {https://github.com/simenzzz/WAF}{github.com/simenzzz/WAF}%
+  {Python, PyTorch, char-LSTM, Mondrian Conformal Prediction, FastAPI, Streamlit}
+\begin{itemize}
+  \item Built a web firewall that sends a request to a costlier tier only when
+        the cheaper one is unsure: ReDoS-safe regex rules, then a calibrated
+        char-LSTM, then a conformal specialist.
+  \item Cut missed attacks by 19\% against the Tier-2 router while escalating
+        only 3.04\% of traffic; recovered 4--8 detections per 100 null-byte
+        evasion mutations with no regression elsewhere.
+\end{itemize}
+
+% ── Skills ──────────────────────────────────────────────────────────────────
+\section{Technical Skills}
+
+\strength{Languages}{Python, Java, Go, TypeScript, JavaScript, SQL, Rust, HTML/CSS}
+\strength{Tools}{Git/GitHub, GitHub Actions, Docker/Compose, PostgreSQL, Redis,
+  RabbitMQ, Spring Data JPA, OpenAPI, Tableau, Jira}
+
+% ── Activities ──────────────────────────────────────────────────────────────
+\section{Leadership \& Activities}
+
+Tutor, LAU CSC243 (OOP) \sep LAU Chess Club \sep
+Volunteer, Beirut Community Center \sep Spoken: English, French, Arabic
+
+\end{document}

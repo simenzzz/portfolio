@@ -1,0 +1,115 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage{resume}
+
+\begin{document}
+
+\cvheader{SAMI BOU KHALED}{Frontend \& AI Engineer}{%
+  \href{mailto:samibk2005@gmail.com}{samibk2005@gmail.com} \sep
+  +961 76 490100 \sep
+  Beirut, Lebanon \sep
+  \href{https://www.linkedin.com/in/samibk/}{linkedin.com/in/samibk} \sep
+  \href{https://github.com/simenzzz}{github.com/simenzzz} \sep
+  \href{https://samibk.com/}{samibk.com}}
+
+% ── Profile ─────────────────────────────────────────────────────────────────
+\section{Professional Profile}
+
+Computer Science graduate from the Lebanese American University (GPA
+3.81/4.00, High Distinction). I build web interfaces in React and TypeScript, from a
+hand-written CSS token system to live UIs that stream LLM output, and I test
+them. During my degree I worked 18 months as a remote data analyst for a
+Dubai-based company. Looking for frontend or AI engineering roles; open to
+relocation and remote work.
+
+% ── Core strengths ──────────────────────────────────────────────────────────
+\section{Core Strengths}
+
+\strength{UI engineering}{React 19, TypeScript, Vite, React Router, Tailwind,
+  component libraries}
+\strength{Design systems \& accessibility}{CSS custom-property tokens, fluid
+  \texttt{clamp()} layout, ARIA, reduced motion, i18n with right-to-left layout}
+\strength{Real-time \& AI UIs}{LLM token streams over WebSockets, React Three
+  Fiber scenes}
+\strength{Testing \& delivery}{Vitest, React Testing Library, Playwright; GitHub
+  Actions, Vercel, Render}
+
+% ── Education ───────────────────────────────────────────────────────────────
+\section{Education}
+
+\entry{BS, Computer Science}{2023 -- 2026}{Lebanese American University,
+  Beirut, Lebanon \sep GPA 3.81/4.00, High Distinction}
+\vspace{3pt}
+\entry{French Baccalaureate, Scientific}{2021 -- 2023}{Coll\`ege \'Elys\'ee,
+  Beirut, Lebanon \sep Mention Tr\`es Bien}
+
+% ── Experience ──────────────────────────────────────────────────────────────
+\section{Experience}
+
+\entry{Data Analyst}{June 2024 -- November 2025}{MaidsCC, Dubai (Remote)}
+\begin{itemize}
+  \item Wrote and tuned the SQL behind the team's Tableau dashboards, with
+        calculated fields and filters so stakeholders could slice the data
+        themselves.
+  \item Set up alerts that fire when a metric crosses a set condition, which
+        replaced checking those numbers by hand.
+\end{itemize}
+
+% ── Projects ────────────────────────────────────────────────────────────────
+\section{Selected Projects}
+
+\project{CareConnect}{https://github.com/simenzzz/CareConnect}{github.com/simenzzz/CareConnect}%
+  {React 19, TypeScript, Vite, React Router 7, Firebase, i18next, Vitest, React Testing Library}
+\begin{itemize}
+  \item Designed and built a two-sided care-booking app on a hand-written CSS
+        token system (fluid \texttt{clamp()} sizes, variable fonts, motion
+        tokens) with no CSS framework; 17 shared UI components are reused
+        across 33 files.
+  \item Added role-based routes behind auth, an app-wide error boundary,
+        labelled ARIA controls, and a global reduced-motion reset. The UI ships
+        in English, French, and Arabic with full right-to-left layout.
+  \item Covered the API and web app with 621 tests; CI runs lint, tests, type
+        checks, and \texttt{npm audit}.
+\end{itemize}
+
+\vspace{3pt}
+
+\project{Council}{https://github.com/simenzzz/Council}{github.com/simenzzz/Council}%
+  {React 19, React Three Fiber, TypeScript, Vite, Tailwind 4, Go, WebSockets}
+\begin{itemize}
+  \item Built a multi-column React UI that streams token deltas from four LLM
+        personas in parallel over one WebSocket, with a React Three Fiber stage
+        of 3D robots that animate for whoever is speaking.
+  \item Kept state in a headless reducer apart from rendering, which made a
+        replay mode possible (speed control, jump back to live), plus a mobile
+        layout. 220 frontend tests.
+\end{itemize}
+
+% ── Research ────────────────────────────────────────────────────────────────
+\section{Research}
+
+\researchentry{Uncertainty-Routed 3-Tier WAF}{2026 \sep Solo}%
+  {https://github.com/simenzzz/WAF}{github.com/simenzzz/WAF}%
+  {Python, PyTorch, char-LSTM, Mondrian Conformal Prediction, FastAPI, Streamlit}
+\begin{itemize}
+  \item Built a web firewall that sends a request to a costlier tier only when
+        the cheaper one is unsure: ReDoS-safe regex rules, then a calibrated
+        char-LSTM, then a conformal specialist.
+  \item Cut missed attacks by 19\% against the Tier-2 router while escalating
+        only 3.04\% of traffic; recovered 4--8 detections per 100 null-byte
+        evasion mutations with no regression elsewhere.
+\end{itemize}
+
+% ── Skills ──────────────────────────────────────────────────────────────────
+\section{Technical Skills}
+
+\strength{Languages}{TypeScript, JavaScript, HTML/CSS, Python, Go, Java, SQL}
+\strength{Tools}{Git/GitHub, GitHub Actions, Docker/Compose, Node/Express,
+  FastAPI, Firebase, PostgreSQL, Redis, Tableau, Jira}
+
+% ── Activities ──────────────────────────────────────────────────────────────
+\section{Leadership \& Activities}
+
+Tutor, LAU CSC243 (OOP) \sep LAU Chess Club \sep
+Volunteer, Beirut Community Center \sep Spoken: English, French, Arabic
+
+\end{document}

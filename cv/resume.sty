@@ -1,0 +1,88 @@
+% resume.sty: shared layout for cv.tex and cv-frontend.tex.
+% Single column, plain text rows, no icons, no header or footer, so ATS parsers
+% read the PDF text in order.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{resume}
+
+% ── Page and font ───────────────────────────────────────────────────────────
+\RequirePackage[a4paper, margin=0.5in]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[default]{sourcesanspro}
+\RequirePackage{xcolor}
+\RequirePackage{hyperref}
+\RequirePackage{enumitem}
+\RequirePackage{titlesec}
+\RequirePackage{needspace}
+
+% Map glyphs to Unicode so copied or parsed text matches the visible text.
+% pdfTeX only (Overleaf default); XeTeX already writes Unicode text.
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{empty}
+% Keep product names whole, so parsers read them as one word.
+\hyphenation{TypeScript JavaScript PostgreSQL WebSockets}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+% Ragged right keeps normal word spaces; tight justified lines lose spaces in
+% extracted text (for example "typesfor").
+\AtBeginDocument{\raggedright}
+
+% ── Colors ──────────────────────────────────────────────────────────────────
+\definecolor{navy}{HTML}{13233D}
+\definecolor{teal}{HTML}{1A9E96}
+\hypersetup{colorlinks=true, urlcolor=teal, linkcolor=teal}
+
+% ── Section headings: bold navy caps over a teal rule ───────────────────────
+\titleformat{\section}
+  {\color{navy}\large\bfseries}{}{0em}{\MakeUppercase}
+  [{\color{teal}\titlerule[1.5pt]}]
+\titlespacing*{\section}{0pt}{7pt}{3pt}
+
+% ── Lists ───────────────────────────────────────────────────────────────────
+\setlist[itemize]{before=\raggedright, leftmargin=1.2em, topsep=1pt, itemsep=0.5pt, parsep=0pt,
+  label={\color{teal}\textbullet}}
+
+% ── Header ──────────────────────────────────────────────────────────────────
+% \cvheader{Name}{Title}{Contact line}
+\newcommand{\cvheader}[3]{%
+  \begin{center}
+    {\color{navy}\fontsize{24}{28}\selectfont\bfseries #1}\\[2pt]
+    {\color{teal}\large #2}\\[3pt]
+    {\small #3}
+  \end{center}
+  \vspace{-6pt}}
+
+% \sep: separator for the contact and activities lines.
+\newcommand{\sep}{\unskip\enspace|\enspace\ignorespaces}
+
+% ── Rows for Core Strengths and Technical Skills ───────────────────────────
+% \strength{Label}{Text}: one paragraph, hanging indent for wrapped lines.
+\newcommand{\strength}[2]{%
+  \par\hangindent=1.2em\hangafter=1
+  {\color{navy}\bfseries #1:}\ #2\par\vspace{1pt}}
+
+% ── Entries ─────────────────────────────────────────────────────────────────
+% \entry{Title}{Dates}{Subtitle}: education and experience.
+\newcommand{\entry}[3]{%
+  \needspace{3\baselineskip}%
+  {\color{navy}\bfseries #1}\hfill{\color{teal}\bfseries\small #2}\\
+  {\small #3}\par}
+
+% \project{Name}{URL}{Visible URL}{Tech line}
+\newcommand{\project}[4]{%
+  \needspace{6\baselineskip}%
+  {\color{navy}\bfseries #1}\hfill{\small\href{#2}{#3}}\\
+  {\color{teal}\small #4}\par}
+
+% \researchentry{Title}{Meta}{URL}{Visible URL}{Tech line}
+\newcommand{\researchentry}[5]{%
+  \needspace{6\baselineskip}%
+  {\color{navy}\bfseries #1}\ {\color{teal}\small\bfseries #2}%
+  \hfill{\small\href{#3}{#4}}\\
+  {\color{teal}\small #5}\par}
+
+\endinput
